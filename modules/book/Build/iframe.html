@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iframe</title>
+    
+    <style>
+        html{
+            height: 100%;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="bookiframe" width="100%" height="100%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen scrolling="no"></iframe>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function(){
+            var testResults = (/\bl=(.*)$\b/i).exec(location.search)
+            var lang = (testResults && testResults[1]) || 'fr';
+            $('#bookiframe').attr('src', `book-${lang}.html?t=${Date.now()}`);
+
+            window.addEventListener("message", function(event){
+                if(event.data == 'bookready'){
+                    console.log("Event bookready has been received from iframe '"+event.source.document.title+"'");
+                }
+
+                var data = {}
+
+                try{
+                    data = JSON.parse(event.data);
+                }catch(e){
+                    console.warn("Malformed JSON '" + event.data + "'. Error: " + e);
+                }
+
+                if(data.type == 'link'){
+                    console.log("Linking to parent page '" + data.page + "'");
+                }
+            }, false);
+
+        });
+    </script>
+</body>
+</html>

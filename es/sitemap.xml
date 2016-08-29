@@ -1,0 +1,28 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://bin.dev/es/#!/start</loc>
+<lastmod>2013-08-21</lastmod>
+<changefreq>daily</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>http://bin.dev/es/#!/brand</loc>
+<lastmod>2013-08-21</lastmod>
+<changefreq>daily</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>http://bin.dev/es/#!/products</loc>
+<lastmod>2013-08-21</lastmod>
+<changefreq>daily</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>http://bin.dev/es/#!/techno</loc>
+<lastmod>2013-08-21</lastmod>
+<changefreq>daily</changefreq>
+<priority>1</priority>
+</url>
+</urlset>

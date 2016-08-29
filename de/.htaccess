@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^_escaped_fragment_=$
+RewriteRule ^(.*)$ _escaped_fragment_$1/index.html? [L]
+
+RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
+RewriteRule ^(.*)$ _escaped_fragment_$1/%1/index.html? [L]
+</IfModule>
+#mobile
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{HTTP_USER_AGENT} android|blackberry|iphone|ipod|ipad|iemobile|palmos [NC] [OR]
+RewriteCond %{HTTP_COOKIE} mobile=yes [OR]
+RewriteCond %{HTTP_COOKIE} !mobile=no
+
+RewriteRule (^(en|fr|es|pt|de|it)\b)|(^$) /mobile?l=$2
+</IfModule>

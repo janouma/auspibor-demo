@@ -1,0 +1,25 @@
+.w100p, .thumbnail .placeholder-container img {
+  width: 100%; }
+
+.w75p {
+  width: 75%; }
+
+.w90p {
+  width: 90%; }
+
+.w95p {
+  width: 95%; }
+
+.w99p {
+  width: 98.5%; }
+
+.leftcol-auto {
+  width: auto; }
+
+.inl-b {
+  display: inline-block; }
+
+.bg-loader {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../../ajax-loader.gif); }

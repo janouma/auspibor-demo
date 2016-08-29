@@ -1,0 +1,144 @@
+@media (min-device-width: 650px) {
+  .moves {
+    -webkit-animation-name: move;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: move;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-name: move;
+    -o-animation-timing-function: linear;
+    -o-animation-iteration-count: infinite;
+    -ms-animation-name: move;
+    -ms-animation-timing-function: linear;
+    -ms-animation-iteration-count: infinite;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; } }
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+.ie6 .halo-ie,
+.ie7 .halo-ie,
+.ie8 .halo-ie,
+.ie9 .halo-ie,
+.iegt9 .halo-ie {
+  z-index: 0;
+  display: block !important;
+  background: #608bd4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100, finishopacity=0, style=2); }
+
+.ie6 .halo_map .halo-ie,
+.ie7 .halo_map .halo-ie,
+.ie8 .halo_map .halo-ie,
+.ie9 .halo_map .halo-ie,
+.iegt9 .halo_map .halo-ie {
+  z-index: 0;
+  display: block !important;
+  background: #608bd4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0, finishopacity=100, style=2); }
+
+.ie10 .halo .halo {
+  background-image: -ms-radial-gradient(center, #608bd4 0, transparent 100%); }
+
+.ie10 .halo_map .halo {
+  background-image: -ms-radial-gradient(center, transparent 0, #608bd4 100%); }
+
+.ie6 .gloss,
+.ie7 .gloss,
+.ie8 .gloss,
+.ie9 .gloss,
+.iegt9 .gloss,
+.ie10 .gloss {
+  background: transparent url('../img/gloss.png?1343921784') center no-repeat; }
+
+.ie6 #mer,
+.ie7 #mer,
+.ie8 #mer,
+.ie9 #mer,
+.iegt9 #mer,
+.ie10 #mer {
+  display: inline-block;
+  margin-top: 135.255px; }
+
+.ie6 .lake-container-width, .ie6 .lake-container,
+.ie6 .ie7 .lake-container,
+.ie7 .ie6 .lake-container,
+.ie6 .ie8 .lake-container,
+.ie8 .ie6 .lake-container,
+.ie6 .ie9 .lake-container,
+.ie9 .ie6 .lake-container,
+.ie6 .iegt9 .lake-container,
+.iegt9 .ie6 .lake-container,
+.ie7 .lake-container-width,
+.ie7 .ie6 .lake-container,
+.ie6 .ie7 .lake-container,
+.ie7 .lake-container,
+.ie7 .ie8 .lake-container,
+.ie8 .ie7 .lake-container,
+.ie7 .ie9 .lake-container,
+.ie9 .ie7 .lake-container,
+.ie7 .iegt9 .lake-container,
+.iegt9 .ie7 .lake-container,
+.ie8 .lake-container-width,
+.ie8 .ie6 .lake-container,
+.ie6 .ie8 .lake-container,
+.ie8 .ie7 .lake-container,
+.ie7 .ie8 .lake-container,
+.ie8 .lake-container,
+.ie8 .ie9 .lake-container,
+.ie9 .ie8 .lake-container,
+.ie8 .iegt9 .lake-container,
+.iegt9 .ie8 .lake-container,
+.ie9 .lake-container-width,
+.ie9 .ie6 .lake-container,
+.ie6 .ie9 .lake-container,
+.ie9 .ie7 .lake-container,
+.ie7 .ie9 .lake-container,
+.ie9 .ie8 .lake-container,
+.ie8 .ie9 .lake-container,
+.ie9 .lake-container,
+.ie9 .iegt9 .lake-container,
+.iegt9 .ie9 .lake-container,
+.iegt9 .lake-container-width,
+.iegt9 .ie6 .lake-container,
+.ie6 .iegt9 .lake-container,
+.iegt9 .ie7 .lake-container,
+.ie7 .iegt9 .lake-container,
+.iegt9 .ie8 .lake-container,
+.ie8 .iegt9 .lake-container,
+.iegt9 .ie9 .lake-container,
+.ie9 .iegt9 .lake-container,
+.iegt9 .lake-container {
+  width: 635px; }
+.ie6 .lake-container-height,
+.ie7 .lake-container-height,
+.ie8 .lake-container-height,
+.ie9 .lake-container-height,
+.iegt9 .lake-container-height {
+  height: 635px; }
+.ie6 .lake-container,
+.ie7 .lake-container,
+.ie8 .lake-container,
+.ie9 .lake-container,
+.iegt9 .lake-container {
+  height: 549.91px; }
+.ie6 .spritespin_hublot_top,
+.ie7 .spritespin_hublot_top,
+.ie8 .spritespin_hublot_top,
+.ie9 .spritespin_hublot_top,
+.iegt9 .spritespin_hublot_top {
+  margin-top: 205px; }
+
+.ie10 #sky {
+  display: none !important; }

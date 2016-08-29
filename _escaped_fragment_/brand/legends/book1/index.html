@@ -1,0 +1,194 @@
+<head><!--<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Nous offrons des vêtements habillés, inspirés par l’univers de la voile et de la mer, dessinés autrement. Venez découvrir notre collection de Spi Shirt ayant une patte de boutonnage originale rappelant le monde de la voile ainsi qu’une poche poitrine en forme de Spi. Along with Auspibor wind out new dream">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grimoire</title>
+<link rel="sitemap" href="sitemap.xml">
+<link type="text/plain" rel="author" href="humans.txt">
+<link rel="stylesheet" href="css/styles.css?v=2013.07.06.11.24.39">
+<link rel="stylesheet" href="css/leaflet.css?v=2013.07.06.11.24.39">
+<!--[if lte IE 8]><link rel="stylesheet" href="css/leaflet-ie.css?v=2013.07.06.11.24.39" /><![endif]-->
+<link rel="stylesheet" href="css/fresco/fresco.css?v=2013.07.06.11.24.39">
+<!--[if IE]><link rel="stylesheet" href="css/ie.css?v=2013.07.06.11.24.39" /><![endif]-->
+<!--[if !(IE)]><!--><!--<![endif]-->
+<!--[if (lt IE 9)]><link rel="stylesheet" href="css/iealert.css?v=2013.07.06.11.24.39" /><![endif]-->
+<style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+<body class="maian-font body-3d events-through" id="incr_specificity" data-bind="css: { 'events-through': isNotFullScreen }" data-twttr-rendered="true">
+<table id="loading" class="abs abs-vertical-stretch abs-horizontal-stretch before-loading z13 center w100p h100p">
+<tbody><tr>
+<td class="middle">
+<!--[if !(IE)]><!-->
+<div id="loading-container" class="loading">
+<b class="spinning" id="spinning-logo"></b>
+<b class="fadein" id="fading-logo"></b>
+</div>
+<!--<![endif]-->
+<h1 class="contrast">Chargement...</h1>
+</td>
+</tr>
+</tbody></table>
+<div id="main_bg_nuages" class="fixed abs-vertical-stretch abs-horizontal-stretch main-bg-nuages h_main_nuage z0">&nbsp;</div>
+<div id="cloud_uber" class="fixed abs-horizontal-stretch h_nuage cloud-uber z3">&nbsp;</div>
+<div class="fixed line z4 w100p pvs mtl pt25 main_logo_container max-top-page min-top-page">
+<div class="unit size1of1">
+<div class="line ptl mbs center">
+<div class="unit size1of1">
+<img id="main_logo" src="img/isologo_lueur.png?v=2013.07.06.11.24.39" class="isologo rel" width="578" height="129" alt="Chargement...">
+</div>
+</div>
+</div>
+</div>
+<div id="static_map" class="fixed abs-vertical-stretch abs-horizontal-stretch z-2 bg-earth top_under_clouds"></div>
+<div id="map" class="fixed abs-vertical-stretch abs-horizontal-stretch z-2"></div>
+<div id="static_map_grid" class="fixed abs-vertical-stretch abs-horizontal-stretch z-1 the-grid top_under_clouds"></div>
+<div id="halo" class="fixed halo abs-vertical-stretch abs-horizontal-stretch z-1">
+<div class="halo h-page">&nbsp;</div>
+</div>
+<div id="main_menu" class="navbar navbar-fixed-top fixed menu events-through-auto escamoted">
+<div class="navbar-inner border-n">
+<div class="container min-width-menu">
+<a href="#!/start" class="brand pbn"><span class="auspibor-font navy-auspibor fs25">@</span><span class="auspibor-font navy-auspibor">AUSPIBOR</span></a>
+<div class="btn-group pull-right">
+<a data-bind="click: function(data,event) { document.location.hash = $root.modalPageHref('newsletter'); }" class="btn btn-info cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="&lt;div class='line'&gt;&lt;div class='unit size1of1'&gt;Inscription à la news letter&lt;/div&gt;&lt;/div&gt;"><i class="icon-bullhorn"></i></a>
+<a data-bind="click: function(data,event) { document.location.hash = $root.modalPageHref('legals'); }" class="btn btn-info btn-mini cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="Mentions légales"><i class="icon-legal"></i></a>
+<a data-bind="click:function(data,event){ $root.shareActivation(); $('#share').show('slow'); }" class="btn btn-info btn-mini cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="Partager cette page"><i class="icon-share-alt"></i></a>
+</div>
+<a data-bind="click: goToEn" data-toggle="tooltip" data-placement="bottom" data-original-title="English" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-uk-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToIt" data-toggle="tooltip" data-placement="bottom" data-original-title="Italiano" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-italy-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToEs" data-toggle="tooltip" data-placement="bottom" data-original-title="Español" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-espagne-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToDe" data-toggle="tooltip" data-placement="bottom" data-original-title="Deutsch" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-allemagne-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<div class="nav-collapse">
+<ul class="nav">
+<!-- ko foreach: $__page__.children -->
+<!-- ko if: !$data.val('modal') --><!-- /ko -->
+<!-- ko if: !$data.val('modal') --><!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/start">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-home"></i> Accueil</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="active">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/brand">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-certificate"></i> Marque</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/products">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-barcode"></i> Les produits</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/techno">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-lightbulb"></i> Glossaire</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<li>
+<a class="navy-auspibor-important" href="#!/brand/legends/book1">
+<span class="middle badge badge-important pbs"><i class="icon-book"></i> Grimoire</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ko foreach: $__page__.children -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) -->
+<div class="navbar-inner border-n sub">
+<div class="container">
+<div class="nav-collapse">
+<ul class="nav">
+<!-- ko foreach: $data.children -->
+<li data-bind="css: { active: $data.isVisible() }" class="">
+<a class="navy-auspibor-important pvn" data-bind="page-href: $data,html: $data.val('htitle')" href="#!/brand/start">Identité de la marque</a>
+</li>
+<li data-bind="css: { active: $data.isVisible() }" class="">
+<a class="navy-auspibor-important pvn" data-bind="page-href: $data,html: $data.val('htitle')" href="#!/brand/point_auspibor">Le point <span class="auspibor-font text-shadow">AUSPIBOR</span></a>
+</li>
+<li data-bind="css: { active: $data.isVisible() }" class="active">
+<a class="navy-auspibor-important pvn" data-bind="page-href: $data,html: $data.val('htitle')" href="#!/brand/legends">Grimoire</a>
+</li>
+<!-- /ko -->
+<!-- ko if: $data.val('alt_id') == 'home' --><!-- /ko -->
+</ul>
+</div>
+</div>
+</div>
+<!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div data-bind="page: { alt_id: 'no', id: 'brand', title: S('&lt;i class=\'icon-certificate\'\&gt;&lt;/i\&gt; Marque').stripTags().s, htitle: '&lt;i class=\'icon-certificate\'\&gt;&lt;/i\&gt; Marque', showElement: fadeIn, hideElement: fadeOut }" class="line" style="display: block; ">
+<div class="unit size1of1">
+<div data-bind="page: { alt_id:'no', id:'legends', htitle:'Grimoire', title:'Grimoire',showElement: fadeIn, hideElement: fadeOut , beforeShow: beforeShowLegendsPage, afterShow: afterShowLegendsPage, beforeHide: beforeHideLegendsPage, afterHide: afterHideLegendsPage }" style="display: block; ">
+<div id="book_pres" class="line contrast z12 mhl slight-rotation-disabled abs abs-bottom abs-right abs-left book-pres-top fade in">
+<div class="unit size1of1 center">
+<div id="inner_book_pres" class="line stitch-bg mas inl-b mal box-shadow-stitchmod book-pres-max-width events-through-auto">
+<div class="unit size1of1">
+<div class="mod stitch mas modSkinBroderie-tl">
+<b class="top"><b class="tl"></b><b class="tr"></b></b>
+<div class="inner">
+<div class="hd stitch-separator-bottom">
+<h2 class="nowrap rel"><div class="middle inl-b contrast no-u no-link-color">Grimoire<a class="close abs abs-right" data-bind="click: function() { $root.hidePresBook(); $('#help_book_button').removeClass('none'); }, clickBubble: false"><i class="icon-remove-sign icon-2x contrast"></i></a></div></h2>
+</div>
+<div class="bd left fs15">
+<div class="line stitch-separator-bottom pas hyphens pal">
+<div class="unit size1of2">
+<p>Le grimoire a été découvert par un membre de la future équipe <span class="auspibor-font text-shadow">AUSPIBOR</span> dans l'épave d'un bateau se trouvant au fond de l'océan.</p>
+<p>Malgré la caisse qui protégeait ces écrits, le grimoire en question était en très mauvais état. Néanmoins suffisamment bien conservé, l'équipe a décidé d'entamer sa restauration.</p>
+<p>Actuellement, nous sommes en train de restaurer le premier récit.</p>
+<p>Le nom <span class="auspibor-font text-shadow">AUSPIBOR</span> est inspiré de cette première histoire qui relate la rencontre entre Austral et Boréal</p>
+</div>
+<div class="unit size1of2 lastUnit">
+<p>Pour illustrer ce premier récit, une ligne de vêtement <span class="auspibor-font text-shadow">SPI&nbsp;S</span><span class="text-shadow">H</span><span class="auspibor-font text-shadow">IR</span><span class="text-shadow">T</span> a été développée, inspirée par Austral.</p>
+<p>La restauration du grimoire étant ardu, il nous sera impossible de tout vous dévoiler en un seul bloc.</p>
+<p>C'est la raison pour laquelle nous nous sommes engagés, dans la mesure du possible, à vous offrir pour chaque récit restauré une collection <span class="auspibor-font text-shadow">AUSPIBOR</span>.</p>
+</div>
+</div>
+<div class="line pam">
+<div class="unit size1of1">
+&nbsp;
+</div>
+</div>
+</div>
+<div class="ft">
+<!-- <p>Foot</p>-->
+</div>
+</div>
+<b class="bottom"><b class="bl"></b><b class="br"></b></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="grimoire_page" class="events-through-all" data-bind="page: { alt_id:'no', id:'book1', role: 'start', title: 'Grimoire', htitle:'Grimoire', frame: 'iframe', sourceOnShow: '/modules/book/Build/book-fr.html', showElement: fadeIn, hideElement: fadeOut}" style="display: block; ">
+<iframe id="bookiframe" width="100%" frameborder="0" class="abs abs-top abs-bottom abs-right abs-left z10 h100p man pan" src="/modules/book/Build/book-fr.html"></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="foot"></div>
+<!--[if lt IE 9]><script src="js/css3mediaqueries.js?v=2013.07.06.11.24.39"></script><![endif]-->
+<!--[if (lt IE 9)]>
+<script src="js/iealert.js?v=2013.07.06.11.24.39"></script>
+<script>$("body").iealert({ support: "ie8" })</script>
+<![endif]-->
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="http://static.ak.facebook.com/connect/xd_arbiter.php?version=25#channel=f38950fc38&amp;origin=http%3A%2F%2Fbin.dev&amp;channel_path=%2F%3Ffb_xd_fragment%23xd_sig%3Df2a52e7b64%26"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="https://s-static.ak.facebook.com/connect/xd_arbiter.php?version=25#channel=f38950fc38&amp;origin=http%3A%2F%2Fbin.dev&amp;channel_path=%2F%3Ffb_xd_fragment%23xd_sig%3Df2a52e7b64%26"></iframe></div></div></div>
+</body>

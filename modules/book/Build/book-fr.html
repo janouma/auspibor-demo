@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]>
+<html class="ie9">
+<![endif]-->
+
+<!--[if !IE]> -->
+<html>
+<!-- <![endif]-->
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex" />
+
+  <script>
+      (function protect () {
+          'use strict'
+          var PASSWORD = 'boregor'
+          var PATTERN = /\bpassword\s*=\s*(.*?)(;|$)/
+          var MAX_ATTEMPT = 3
+          var PROMPT_TEXT = 'Enter password'
+          var FORBIDDEN_URL = '403.html'
+          var testResults
+          var autoPass
+          var params
+          var query = top.document.location.search.substring(1)
+          var parsedQuery
+          var input
+          var attempt = 0
+          var expirationDate
+          var paramTuple
+
+          console.debug(query)
+
+          if (query) {
+              parsedQuery = query.split('&').map(function (param){return param.split('=')})
+
+              for(paramTuple of parsedQuery){
+                  console.debug(paramTuple)
+                  if(paramTuple[0] === 'password'){
+                      console.debug("auto pass")
+                      autoPass = paramTuple[1]
+                      break
+                  }
+              }
+          }
+
+          if (!autoPass) {
+              testResults = PATTERN.exec(document.cookie)
+              autoPass = testResults && testResults[1]
+          }
+
+          if (autoPass !== PASSWORD) {
+              while (attempt++ < MAX_ATTEMPT) {
+                  if (input = prompt(PROMPT_TEXT, '')) {
+                      if (input === PASSWORD) {
+                          console.debug("password accepted")
+                          expirationDate = new Date()
+                          expirationDate.setTime(expirationDate.getTime() + 30 * 24 * 60 * 60 * 1000)
+                          document.cookie = `password=${input};path=/;expires=${expirationDate.toUTCString()}`
+                          return
+                      }
+                  } else {
+                      document.location.replace(FORBIDDEN_URL)
+                      return
+                  }
+              }
+              console.error("access denied")
+              document.location.replace(FORBIDDEN_URL)
+          }
+      })()
+  </script>
+
+  <link rel='stylesheet' href='assets/ac6aca1d1c497b9e53ae4ce353e5a80f.css'>
+
+  <title>Auspibor legend</title>
+
+</head>
+
+<body data-music-mp3="assets/sound/factory-tale-remaster.mp3?1472473525"
+      data-music-ogg="assets/sound/factory-tale-remaster.ogg?1472473525"
+      data-music-wma="assets/sound/factory-tale-remaster.wma?1472473525">
+
+<!-- Book media api test
+<button onclick="bookMediaControler.musicOn();">Music On</button>
+<button onclick="bookMediaControler.musicOff();">Music Off</button>
+<button style="position:absolute;z-index:20000;" onclick="bookMediaControler.pause()">test pause</button>
+-->
+
+    <span id="image-loader">
+        <i data-src="assets/img/ld_bg-cloth.png?1472473525"></i>
+        <i id="fabric-pattern" data-src="assets/img/ld_tissu50ptransp.png?1472473525"></i>
+        <i data-src="assets/img/ld_cipher.png?1472473525"></i>
+        <i data-src="assets/img/ld_old-paper.png?1472473525"></i>
+        <i data-src="assets/img/ld_old-cover.png?1472473525"></i>
+        <i data-src="assets/img/ld_old-inner-cover.png?1472473525"></i>
+        <i data-src="assets/img/snapshot-placeholder.png?1472473525"></i>
+        <i data-src="assets/img/play.png?1472473525"></i>
+        <i data-src="assets/img/pause.png?1472473525"></i>
+        <i data-src="assets/img/play-sd.png?1472473525"></i>
+        <i data-src="assets/img/pause-sd.png?1472473525"></i>
+        <i data-src="assets/img/ld_video-border.png?1472473525"></i>
+        <i data-src="assets/img/ld_reversed-video-border.png?1472473525"></i>
+        <i data-src="assets/img/ld_animation-mark.gif?1472473525"></i>
+        <i data-src="assets/img/ld_candle-off.png?1472473525"></i>
+    </span>
+
+    <span id="css-hd-images">
+        <i data-src="assets/img/hd-img/hd_tissu50ptransp.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_bg-cloth.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_compass-shadow.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_cipher.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_old-paper.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_snapshot-1.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_snapshot-2.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_snapshot-3.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_snapshot-4.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_old-cover.png?1472473525"></i>
+        <i data-src="assets/img/hd-img/hd_old-inner-cover.png?1472473525"></i>
+    </span>
+
+    <span id="snapshot-loader">
+        <i data-src="assets/img/ld_snapshot.png?1472473525"></i>
+    </span>
+
+<img id="zoom-out" src="assets/img/zoom-out.png?1472473525"/>
+
+<div id="volume-control">
+    <div class="icon"></div>
+</div>
+
+<div id="book-layer" class="loading" data-play-img="assets/img/play.png?1472473525" data-pause-img="assets/img/pause.png?1472473525" data-play-img-sd="assets/img/play-sd.png?1472473525" data-pause-img-sd="assets/img/pause-sd.png?1472473525" data-magnify-tooltip="Agrandir (uniquement en lecture)">
+    <div id="book-frame">
+        <div id="legend-book" class="flipbook">
+
+            <!--[if !IE]> -->
+<div class='hard outer-cover front'>
+  <div class='inner-content center middle'>
+    <h1>L&Eacute;GENDE <b class="auspibor">&nbsp;<strong>@</strong>AUSPIBOR</b></h1>
+    <h2>Livre I</h2>
+  </div>
+</div>
+<div class='hard inner-cover front'>
+  <div class='side'></div>
+</div>
+<!-- <![endif]-->
+
+            <div class="page-content">
+                <div class="inner-content center middle">
+                    <h1>L&Eacute;GENDE <b class="auspibor">&nbsp;<strong>@</strong>AUSPIBOR</b></h1>
+                    <h2>Livre I</h2>
+                </div>
+            </div>
+            <div id="preface" class="page-content">
+                <div class="inner-content justify middle">
+                    <a id="bookmark" href="#namedpagesummary"></a>
+                    <h2 class="center">Avertissement</h2>
+                    <p class="first">Le premier récit du grimoire est en cours de restauration. Certaines pages restent encore à déchiffrer et à traduire.</p>
+                    <p><a href="#appendix1">Pour les détails voir page annexe.</a></p>
+                </div>
+            </div>
+
+
+            <div id="summary" class="page-content">
+                <div class="inner-content center">
+                    <h2>Chapitre I</h2>
+                    <ol class="summary">
+                        <li><a href="#video1">Guerre méditerranéenne</a></li>
+                        <li><a href="#video2">La flèche de Cupidon</a></li>
+                        <li class="damaged">Le procès des vents</li>
+                        <li class="damaged">à la poursuite des vents</li>
+                        <li><a href="#video5">Le point <b class="auspibor"><strong>@</strong>AUSPIBOR</b></a></li>
+                        <li class="damaged">Le traité de paix</li>
+                        <li class="damaged">Le retour des vents</li>
+                        <li><a href="#video8">La légende d'Austral et Boréal</a></li>
+                        <li><a href="#video9">L'héritage des vents</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- video1: Guerre méditerranéenne -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="assets/img/01-greeks_ahead-pyro.png?1472473525"/>
+                        <img class="snapshot animation-mark" src="assets/img/hd-img/hd_animation-mark.gif?1472473525"/>
+                        <img class="snapshot border" src="assets/img/hd-img/hd_video-border.png?1472473525"/>
+                        <img class="snapshot controls paused" data-video-id="57231185" data-colors="assets/img/01-greeks_ahead.png?1472473525" src="assets/img/snapshot-placeholder.png?1472473525"/>
+                    </div>
+                    <p class="first">L’histoire commence avec un conflit qui se déclare entre les cités grecques et le roi pharaon d’Egypte à l'époque de la mythologie. C’est un combat naval qui s’engage pour la maitrise de la Méditerranée.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Proin consequat commodo neque, nec sagittis ligula rutrum vel.</p>
+                </div>
+            </div>
+
+
+            <div class="page-content snapshothd1"></div>
+            <!-- video2: La flèche de Cupidon -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Torem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sem et tortor gravida elementum a scelerisque velit. Morbi sed tellus dolor, id placerat turpis. Vivamus felis metus, volutpat in placerat non, luctus et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="assets/img/02-austral_and_boreal-pyro.png?1472473525"/>
+                        <img class="snapshot animation-mark" src="assets/img/hd-img/hd_animation-mark.gif?1472473525"/>
+                        <img class="snapshot border" src="assets/img/hd-img/hd_video-border.png?1472473525"/>
+                        <img class="snapshot controls paused" data-video-id="62466955" data-colors="assets/img/02-austral_and_boreal.png?1472473525" src="assets/img/snapshot-placeholder.png?1472473525"/>
+                    </div>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum.</p>
+                </div>
+            </div>
+
+
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first">Les Grecs, pour faire descendre leurs bateaux vers le sud, ont besoin du vent Boréal pour gonfler leurs voiles.</p>
+                    <p>Les Egyptiens, afin de venir faire la guerre aux Grecs, demandent à Austral de souffler dans leurs voiles.</p>
+                    <p>Les deux vents soufflent, et c’est ainsi qu’ils se rencontrent. C’est le coup de foudre, provoqué par une flèche d'or de Cupidon, envoyé par les Dieux qui ne voulaient pas que les Grecs et les Egyptiens se battent.</p>
+                    <p>La flèche frappe les deux vents qui tombent amoureux et décident de cesser de souffler empêchant ainsi les deux flottes de se rencontrer pour se battre.</p>
+                    <p class="damaged">Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti.</p>
+                </div>
+            </div>
+            <div class="page-content snapshothd2"></div>
+
+            <div class="page-content snapshothd2"></div>
+            <div class="page-content">
+                <div class="inner-content justify damaged">
+                    <p>Torem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sem et tortor gravida elementum a scelerisque velit. Morbi sed tellus dolor, id placerat turpis. Vivamus felis metus, volutpat in placerat non, luctus et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet nunc non quam elementum fermentum. Nulla consectetur laoreet urna nec rhoncus. Vivamus varius hendrerit cursus.</p>
+                    <p>Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <!-- video3: Le procès des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <img class="snapshot" src="assets/img/damaged-picture.png?1472473525"/>
+                    <p class="first">Les vents sont mis en accusation par les deux armées qui veulent les traduire comme traitres en justice. Austral et Boréal s'enfuient. Ils sont poursuivis par les Egyptiens et les Grecs.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Proin consequat commodo neque, nec sagittis ligula rutrum vel.</p>
+                </div>
+            </div>
+            <!-- video4: à la poursuite des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <img class="snapshot" src="assets/img/damaged-picture.png?1472473525"/>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first">Le vent Austral habitué à traverser le Désert et l’Océan vers l’Amérique en emportant avec lui des grains de sable, indique à Boréal qu’il connait un endroit où ils pourraient s’aimer en paix.</p>
+                    <p>Malheureusement, étant poursuivis par les rameurs Grecs et Egyptiens, Auster et Boréal décident, alors, de créer une nouvelle voile plus rapide, ils créent donc le Spi.</p>
+                    <p class="damaged">Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+            <!-- video5: Le point Auspibor -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="first">En soufflant à deux dans le Spi, les vents échappent aux armées et arrivent au point <b class="auspibor"><strong>@</strong>AUSPIBOR</b>: 0.0.0.</p>
+                    <p>Le temps passant, les Grecs et les Egyptiens, cherchant les vents ensemble se lient d'amitié et font la paix.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="assets/img/11-auspibor_shelter-pyro.png?1472473525"/>
+                        <img class="snapshot animation-mark" src="assets/img/hd-img/hd_animation-mark.gif?1472473525"/>
+                        <img class="snapshot border" src="assets/img/hd-img/hd_video-border.png?1472473525"/>
+                        <img class="snapshot controls paused" data-video-id="69620056" data-colors="assets/img/11-auspibor_shelter.png?1472473525" src="assets/img/snapshot-placeholder.png?1472473525"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page-content snapshothd4"></div>
+            <div class="page-content">
+                <div class="inner-content justify damaged">
+                    <p>Torem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sem et tortor gravida elementum a scelerisque velit. Morbi sed tellus dolor, id placerat turpis. Vivamus felis metus, volutpat in placerat non, luctus et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet nunc non quam elementum fermentum. Nulla consectetur laoreet urna nec rhoncus. Vivamus varius hendrerit cursus.</p>
+                    <p>Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <!-- video6: Le traité de paix -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <img class="snapshot" src="assets/img/damaged-picture.png?1472473525"/>
+                    <p class="first">Ils le font savoir aux vents et leur demandent de revenir dans leurs contrées respectives.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first">Les vents voulant respecter leurs devoirs, décident de se quitter et de renter chez eux.</p>
+                    <p>Ils décident de confier le Spi aux hommes pour qu’ils se rappellent de leur amour et de la raison pour laquelle ils ont fait la paix.</p>
+                    <p class="damaged">Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <!-- video7: Le retour des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Mauris non dui vitae tortor porttitor lacinia.</p>
+                    <img class="snapshot" src="assets/img/damaged-picture.png?1472473525"/>
+                </div>
+            </div>
+            <div class="page-content snapshothd3"></div>
+
+
+            <!-- video8: La légende d'Austral et Boréal -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="assets/img/16-winds_legend-pyro.png?1472473525"/>
+                        <img class="snapshot animation-mark" src="assets/img/hd-img/hd_animation-mark.gif?1472473525"/>
+                        <img class="snapshot border" src="assets/img/hd-img/hd_reversed-video-border.png?1472473525"/>
+                        <img class="snapshot controls paused" data-video-id="61647184" data-colors="assets/img/16-winds_legend.png?1472473525" src="assets/img/snapshot-placeholder.png?1472473525"/>
+                    </div>
+                    <p class="first">Les peuples de la région, en racontant cette légende à leurs enfants, ont décidé de nommer ce point <b class="auspibor"><strong>@</strong>AUSPIBOR</b> 0.0.0 en l’honneur des vents, de leur union, de leur création et afin de se placer sous leur protection.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Sed imperdiet justo sed felis vestibulum accumsan.</p>
+                </div>
+            </div>
+            <!-- video9: L'héritage des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Mauris non dui vitae tortor porttitor lacinia.</p>
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="assets/img/17-winds_legacy-pyro.png?1472473525"/>
+                        <img class="snapshot animation-mark" src="assets/img/hd-img/hd_animation-mark.gif?1472473525"/>
+                        <img class="snapshot border" src="assets/img/hd-img/hd_video-border.png?1472473525"/>
+                        <img class="snapshot controls paused" data-video-id="73773930" data-colors="assets/img/17-winds_legacy.png?1472473525" src="assets/img/snapshot-placeholder.png?1472473525"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first">Austral, afin de remercier les hommes qui perpétuent cette légende, laisse tomber, en cadeau, des larmes en forme de grains de sables en certains points spécifiques des mers du globe.</p>
+                    <p>Lorsque les grains de sable touchent la surface de la mer, il se crée une écume de laquelle surgit un vêtement <b class="auspibor"><strong>@</strong>AUSPIBOR</b>.</p>
+                    <p>En fait tous les vêtements naitront de l’écume des mers générée par le contact entre la mer et les grains de sable.</p>
+                </div>
+            </div>
+            <div class="page-content appendix-page">
+                <div class="inner-content justify">
+                    <h2 class="center">Genèse</h2>
+                    <p class="first">Le Grimoire est composé d'une suite de contes et légendes.</p>
+                    <p>A la surprise des Archeologues, il est dit que les textes sont écrits en langue Anglo Normande.</p>
+                    <p>Le Grimoire se présente sous la forme de plusieurs récits qui vous seront offerts au fil des collections et au fil de leur restauration.</p>
+                    <p><a href="javascript:void(0)" data-link="products">Afin de permettre à <b class="auspibor"><strong>@</strong>AUSPIBOR</b> une rénovation rapide et efficace de ce grimoire, vous pouvez nous soutenir en achetant les modèles de la collection.</a></p>
+                    <p>La présente collection ''Ligne Spi'' s'inspire fortement du chapitre un du livre Premier.</p>
+                    <p>Les prochaines collections <b class="auspibor"><strong>@</strong>AUSPIBOR</b> s'inspireront des autres chapitres.</p>
+                    <p class="center"><a href="#namedpagesummary">Retour au sommaire</a></p>
+                </div>
+            </div>
+
+            <!--[if !IE]> -->
+<div class='hard inner-cover back fixed'>
+  <div class='side'></div>
+</div>
+<div class='hard outer-cover back'>
+  <div class='inner-content center perfect-middle'>
+    <h1>
+      <a class='auspibor' href='#page1'>
+        <b class='huge'>@</b>
+      </a>
+    </h1>
+  </div>
+</div>
+<!-- <![endif]-->
+
+        </div>
+    </div>
+</div>
+
+<div id="decoration-frame">
+    <div id="decoration">
+        <div class="candle" id="candle1">
+            <img class="shadow" src="assets/img/ld_candle-shadow.png?1472473525"/>
+            <img class="light" src="assets/img/ld_candle-cinemagraph.gif?1472473525"/>
+        </div>
+        <div class="candle" id="candle2">
+            <img class="shadow" src="assets/img/ld_candle-shadow.png?1472473525"/>
+            <img class="light" src="assets/img/ld_candle-cinemagraph.gif?1472473525"/>
+        </div>
+        <div class="candle" id="candle3">
+            <img class="shadow" src="assets/img/ld_candle-shadow.png?1472473525"/>
+            <img class="light" src="assets/img/ld_candle-cinemagraph.gif?1472473525"/>
+        </div>
+        <div class="candle" id="candle4">
+            <img class="shadow" src="assets/img/ld_candle-shadow.png?1472473525"/>
+            <img class="light" src="assets/img/ld_candle-cinemagraph.gif?1472473525"/>
+        </div>
+        <img id="compass" src="assets/img/ld_compass-cinemagraph.gif?1472473525"/>
+        <div class="candle" id="candle5">
+            <img class="shadow" src="assets/img/ld_candle-shadow.png?1472473525"/>
+            <img class="light" src="assets/img/ld_candle-cinemagraph.gif?1472473525"/>
+        </div>
+    </div>
+</div>
+  
+    <script src='assets/2be80d20c7e136094d50da26bf0cd192.js'></script>
+</body>
+
+</html>

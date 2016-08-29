@@ -1,0 +1,6 @@
+/* CONTACT */
+	contact@auspibor.com
+/* SITE */
+	Language: English / Italiano / Français 
+	Standards: HTML5, CSS3
+	Components: Modernizr, jQuery, knockoutJS

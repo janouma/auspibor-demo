@@ -1,0 +1,277 @@
+<head><!--<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Nous offrons des vêtements habillés, inspirés par l’univers de la voile et de la mer, dessinés autrement. Venez découvrir notre collection de Spi Shirt ayant une patte de boutonnage originale rappelant le monde de la voile ainsi qu’une poche poitrine en forme de Spi. Along with Auspibor wind out new dream">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le SPI&nbsp;SHIRT et la patte de boutonnage</title>
+<link rel="sitemap" href="sitemap.xml">
+<link type="text/plain" rel="author" href="../humans.txt">
+<link rel="stylesheet" href="../css/styles.css?v=2013.07.06.11.24.39">
+<link rel="stylesheet" href="../css/leaflet.css?v=2013.07.06.11.24.39">
+<!--[if lte IE 8]><link rel="stylesheet" href="../css/leaflet-ie.css?v=2013.07.06.11.24.39" /><![endif]-->
+<link rel="stylesheet" href="../css/fresco/fresco.css?v=2013.07.06.11.24.39">
+<!--[if IE]><link rel="stylesheet" href="../css/ie.css?v=2013.07.06.11.24.39" /><![endif]-->
+<!--[if !(IE)]><!--><!--<![endif]-->
+<!--[if (lt IE 9)]><link rel="stylesheet" href="../css/iealert.css?v=2013.07.06.11.24.39" /><![endif]-->
+<style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+<body class="maian-font body-3d events-through" id="incr_specificity" data-bind="css: { 'events-through': isNotFullScreen }" data-twttr-rendered="true">
+<table id="loading" class="abs abs-vertical-stretch abs-horizontal-stretch before-loading z13 center w100p h100p">
+<tbody><tr>
+<td class="middle">
+<!--[if !(IE)]><!-->
+<div id="loading-container" class="loading">
+<b class="spinning" id="spinning-logo"></b>
+<b class="fadein" id="fading-logo"></b>
+</div>
+<!--<![endif]-->
+<h1 class="contrast">Chargement...</h1>
+</td>
+</tr>
+</tbody></table>
+<div id="main_bg_nuages" class="fixed abs-vertical-stretch abs-horizontal-stretch main-bg-nuages h_main_nuage moves z0">&nbsp;</div>
+<div id="cloud_uber" class="fixed abs-horizontal-stretch h_nuage cloud-uber moves z3">&nbsp;</div>
+<div class="fixed line z4 w100p pvs mtl pt25 main_logo_container max-top-page min-top-page">
+<div class="unit size1of1">
+<div class="line ptl mbs center">
+<div class="unit size1of1">
+<img id="main_logo" src="../img/isologo_lueur.png?v=2013.07.06.11.24.39" class="isologo rel" width="578" height="129" alt="Chargement...">
+</div>
+</div>
+</div>
+</div>
+<div id="static_map" class="fixed abs-vertical-stretch abs-horizontal-stretch z-2 bg-earth top_under_clouds"></div>
+<div id="map" class="fixed abs-vertical-stretch abs-horizontal-stretch z-2"></div>
+<div id="static_map_grid" class="fixed abs-vertical-stretch abs-horizontal-stretch z-1 the-grid top_under_clouds"></div>
+<div id="halo" class="fixed halo abs-vertical-stretch abs-horizontal-stretch z-1">
+<div class="halo h-page">&nbsp;</div>
+</div>
+<div id="main_menu" class="navbar navbar-fixed-top fixed menu events-through-auto escamoted">
+<div class="navbar-inner border-n">
+<div class="container min-width-menu">
+<a href="#!/start" class="brand pbn"><span class="auspibor-font navy-auspibor fs25">@</span><span class="auspibor-font navy-auspibor">AUSPIBOR</span></a>
+<div class="btn-group pull-right">
+<a data-bind="click: function(data,event) { document.location.hash = $root.modalPageHref('newsletter'); }" class="btn btn-info cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="&lt;div class='line'&gt;&lt;div class='unit size1of1'&gt;Inscription à la news letter&lt;/div&gt;&lt;/div&gt;"><i class="icon-bullhorn"></i></a>
+<a data-bind="click: function(data,event) { document.location.hash = $root.modalPageHref('legals'); }" class="btn btn-info btn-mini cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="Mentions légales"><i class="icon-legal"></i></a>
+<a data-bind="click:function(data,event){ $root.shareActivation(); $('#share').show('slow'); }" class="btn btn-info btn-mini cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="Partager cette page"><i class="icon-share-alt"></i></a>
+</div>
+<a data-bind="click: goToEn" data-toggle="tooltip" data-placement="bottom" data-original-title="English" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-uk-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToIt" data-toggle="tooltip" data-placement="bottom" data-original-title="Italiano" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-italy-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToEs" data-toggle="tooltip" data-placement="bottom" data-original-title="Español" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-espagne-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToDe" data-toggle="tooltip" data-placement="bottom" data-original-title="Deutsch" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-allemagne-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<div class="nav-collapse">
+<ul class="nav">
+<!-- ko foreach: $__page__.children -->
+<!-- ko if: !$data.val('modal') --><!-- /ko -->
+<!-- ko if: !$data.val('modal') --><!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/start">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-home"></i> Accueil</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/brand">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-certificate"></i> Marque</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="active">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/products">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-barcode"></i> Les produits</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/techno">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-lightbulb"></i> Glossaire</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<li>
+<a class="navy-auspibor-important" href="#!/brand/legends/book1">
+<span class="middle badge badge-important pbs"><i class="icon-book"></i> Grimoire</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ko foreach: $__page__.children -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) -->
+<div class="navbar-inner border-n sub">
+<div class="container">
+<div class="nav-collapse">
+<ul class="nav">
+<!-- ko foreach: $data.children -->
+<li data-bind="css: { active: $data.isVisible() }" class="">
+<a class="navy-auspibor-important pvn" data-bind="page-href: $data,html: $data.val('htitle')" href="#!/products/start">Les modèles</a>
+</li>
+<li data-bind="css: { active: $data.isVisible() }" class="active">
+<a class="navy-auspibor-important pvn" data-bind="page-href: $data,html: $data.val('htitle')" href="#!/products/spy_shirt_line">La ligne <span class="auspibor-font text-shadow">SPI&nbsp;S</span><span class="text-shadow">H</span><span class="auspibor-font text-shadow">IR</span><span class="text-shadow">T</span></a>
+</li>
+<!-- /ko -->
+<!-- ko if: $data.val('alt_id') == 'home' --><!-- /ko -->
+</ul>
+</div>
+</div>
+</div>
+<!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div data-bind="page: { alt_id: 'no', id: 'products', title: S('&lt;i class=\'icon-barcode\'\&gt;&lt;/i\&gt; Les produits').stripTags().s, htitle: '&lt;i class=\'icon-barcode\'\&gt;&lt;/i\&gt; Les produits', showElement: fadeIn, hideElement: fadeOut }" class="line" style="display: block; ">
+<div class="unit size1of1">
+<div id="spy_shirt_line" data-bind="page: { alt_id: 'no' ,id: 'spy_shirt_line', title: S('La ligne &lt;span class=\'auspibor-font text-shadow\'\&gt;SPI&nbsp;S&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;H&lt;/span\&gt;&lt;span class=\'auspibor-font text-shadow\'\&gt;IR&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;T&lt;/span\&gt;').stripTags().s, htitle: 'La ligne &lt;span class=\'auspibor-font text-shadow\'\&gt;SPI&nbsp;S&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;H&lt;/span\&gt;&lt;span class=\'auspibor-font text-shadow\'\&gt;IR&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;T&lt;/span\&gt;', showElement: fadeIn, hideElement: fadeOut }" class="line" style="display: block; ">
+<div class="unit size1of1">
+<div class="line fixed z3 contrast abs-horizontal-stretch title-page max-top-page min-top-page">
+<div class="unit size1of1 center">
+<div class="line stitch-bg mtl inl-b width-main-title-page-unit mal box-shadow-stitchmod" data-bind="visible: $page.val('alt_id')!=='modeles', css: {'broderie-opacity': $page.val('alt_id')==='modeles' || $root.subpageIsMouseOver() }">
+<div class="unit size1of1">
+<div class="mod stitch mas modSkinBroderie-bl">
+<b class="top"><b class="tl"></b><b class="tr"></b></b>
+<div class="inner">
+<div class="bd left fs15">
+<div class="line ph50 pv30">
+<div class="unit size1of1 center">
+<h1 data-bind="html: $page.val('htitle')" class="uppercase nowrap contrast fs36">La ligne <span class="auspibor-font text-shadow">SPI&nbsp;S</span><span class="text-shadow">H</span><span class="auspibor-font text-shadow">IR</span><span class="text-shadow">T</span></h1>
+</div>
+</div>
+</div>
+</div>
+<b class="bottom"><b class="bl"></b><b class="br"></b></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-bind="template: { name: 'submenu'}">
+<!-- ko foreach: $__page__.children -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) -->
+<!-- ko foreach: $data.children -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) -->
+<div class="line submenu-container fixed z3 events-through-auto" data-bind="css: { 'submenu-container-modeles': $data.val('alt_id')==='modeles' }">
+<div class="unit size1of1 right">
+<ul class="submenu nav nav-tabs nav-stacked inl-b mal box-shadow-stitchmod">
+<!-- ko foreach: $data.children -->
+<li data-bind="if:$data.val('htitle'), css:{active: $data.isVisible}, event: { mouseover: $root.mouseOverProduct, mouseout: $root.closePopup }" class="active">
+<a class="left stitch-bg contrast cursor-pointer" data-bind="page-href: $data" href="#!/products/spy_shirt_line/start">
+<i class="icon-white icon-chevron-right pull-right mts"></i>
+<span data-bind="html: $data.val('htitle')">Le <span class="auspibor-font text-shadow">SPI&nbsp;S</span><span class="text-shadow">H</span><span class="auspibor-font text-shadow">IR</span><span class="text-shadow">T</span> et la patte de boutonnage</span>
+</a>
+</li>
+<li data-bind="if:$data.val('htitle'), css:{active: $data.isVisible}, event: { mouseover: $root.mouseOverProduct, mouseout: $root.closePopup }" class="">
+<a class="left stitch-bg contrast cursor-pointer" data-bind="page-href: $data" href="#!/products/spy_shirt_line/poche">
+<i class="icon-white icon-chevron-right pull-right mts"></i>
+<span data-bind="html: $data.val('htitle')">La poche</span>
+</a>
+</li>
+<li data-bind="if:$data.val('htitle'), css:{active: $data.isVisible}, event: { mouseover: $root.mouseOverProduct, mouseout: $root.closePopup }" class="">
+<a class="left stitch-bg contrast cursor-pointer" data-bind="page-href: $data" href="#!/products/spy_shirt_line/col">
+<i class="icon-white icon-chevron-right pull-right mts"></i>
+<span data-bind="html: $data.val('htitle')">Le col de chemise formel</span>
+</a>
+</li>
+<li data-bind="if:$data.val('htitle'), css:{active: $data.isVisible}, event: { mouseover: $root.mouseOverProduct, mouseout: $root.closePopup }" class="">
+<a class="left stitch-bg contrast cursor-pointer" data-bind="page-href: $data" href="#!/products/spy_shirt_line/autre">
+<i class="icon-white icon-chevron-right pull-right mts"></i>
+<span data-bind="html: $data.val('htitle')">Autre</span>
+</a>
+</li>
+<li data-bind="if:$data.val('htitle'), css:{active: $data.isVisible}, event: { mouseover: $root.mouseOverProduct, mouseout: $root.closePopup }" class="">
+<a class="left stitch-bg contrast cursor-pointer" data-bind="page-href: $data" href="#!/products/spy_shirt_line/ligne_maille">
+<i class="icon-white icon-chevron-right pull-right mts"></i>
+<span data-bind="html: $data.val('htitle')">Ligne Maille</span>
+</a>
+</li>
+<li data-bind="if:$data.val('htitle'), css:{active: $data.isVisible}, event: { mouseover: $root.mouseOverProduct, mouseout: $root.closePopup }" class="">
+<a class="left stitch-bg contrast cursor-pointer" data-bind="page-href: $data" href="#!/products/spy_shirt_line/ligne_stretch">
+<i class="icon-white icon-chevron-right pull-right mts"></i>
+<span data-bind="html: $data.val('htitle')">Ligne Stretch &amp; Perf</span>
+</a>
+</li>
+<!-- /ko -->
+</ul>
+</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div class="page top-page max-top-page min-top-page liquid rel z-1 contrast events-through-auto" data-bind="css: { 'top-page-modeles': $page.val('alt_id')==='modeles', 'events-through-auto': $page.val('alt_id')!=='modeles', 'events-through': $page.val('alt_id')==='modeles'}">
+<div class="body">
+<div class="leftCol">
+<div class="line">
+<div class="unit size1of1">&nbsp;</div>
+</div>
+</div>
+<div class="rightCol">&nbsp;</div>
+<div class="main center">
+<div class="line mtl rel width-main-unit inl-b">
+<div class="unit size1of1">
+<div id="patte" data-next="products/spy_shirt_line/poche" data-bind="event: { mouseover: function(data,event) { $root.subpageIsMouseOver(true); },mouseout: function(data,event) { $root.subpageIsMouseOver(false); } },page:{ id:'start',title: S('Le &lt;span class=\'auspibor-font text-shadow\'\&gt;SPI&nbsp;S&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;H&lt;/span\&gt;&lt;span class=\'auspibor-font text-shadow\'\&gt;IR&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;T&lt;/span\&gt; et la patte de boutonnage').stripTags().s, htitle: 'Le &lt;span class=\'auspibor-font text-shadow\'\&gt;SPI&nbsp;S&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;H&lt;/span\&gt;&lt;span class=\'auspibor-font text-shadow\'\&gt;IR&lt;/span\&gt;&lt;span class=\'text-shadow\'\&gt;T&lt;/span\&gt; et la patte de boutonnage', showElement: fadeIn, hideElement: fadeOut }" class="line stitch-bg mtl inl-b mal box-shadow-stitchmod subpage cursor-pointer" style="display: inline-block; ">
+<div class="unit size1of1">
+<div class="mod stitch mas modSkinBroderie-tl rel">
+<b class="top"><b class="tl"></b><b class="tr"></b></b>
+<div class="inner">
+<div class="bd left fs15 stitch-separator-bottom">
+<div class="line ph50 pv30">
+<div class="unit size1of1">
+<div class="media man mbm">
+<h2 class="uppercase bleu-auspibor pbm mln text-shadow" data-bind="html: $page.val('htitle')">Le <span class="auspibor-font text-shadow">SPI&nbsp;S</span><span class="text-shadow">H</span><span class="auspibor-font text-shadow">IR</span><span class="text-shadow">T</span> et la patte de boutonnage</h2>
+<div class="bd">
+<p class="hyphens mhn">Compromis entre la coupe polo et la chemise classique, nous avons apporté des changements pour actualiser notre <span class="auspibor-font text-shadow">SPI&nbsp;S</span><span class="text-shadow">H</span><span class="auspibor-font text-shadow">IR</span><span class="text-shadow">T</span>. Les boutons plastiques peu esthétiques présents dans les modèles traditionnels ont été remplacés par de nouvelles attaches dont l'imaginaire renvoi à la tradition marine à laquelle le site internet <span class="auspibor-font text-shadow">AUSPIBOR</span> fait un clin d'œil . Le revêtement en <a href="#!/techno/techno_accessoires/start" class="positive hover-white" rel="popover" data-content="&lt;div class='hyphens'&gt;Le palladium dont le symbole est Pd fait parti de la famille des platines. C'est un métal précieux. Il rentre dans la composition de l'or blanc en joaillerie.&lt;/div&gt;" data-original-title="Palladium">Palladium</a>
+(métal à la base de l'or blanc) ajoute à l'éclat du produit.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ft pam left">
+<a class="inl-b btn btn-mini btn-info btn-share trigger-tooltip" data-toggle="tooltip" data-placement="right" data-original-title="Partager cette page" data-bind="click:function(data,event){ $root.shareActivation(); $('#share').show('slow'); }, clickBubble: false"><i class="icon-share-alt"></i></a>
+<a href="#!/products/start/auspibor" class="inl-b btn btn-mini btn-info pull-right" data-bind="click: function(){ setTimeout(function(){ NS.viewModel.showStaticMap(); },50); return true; }, clickBubble: false"><i class="icon-eye-open"></i> Voir le produit</a>
+</div>
+</div>
+<b class="bottom"><b class="bl"></b><b class="br"></b></b>
+</div>
+</div>
+</div>
+<div class="line v-hidden h-infinite">
+<div class="unit size1of1">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="foot"></div>
+<!--[if lt IE 9]><script src="../js/css3mediaqueries.js?v=2013.07.06.11.24.39"></script><![endif]-->
+<!--[if (lt IE 9)]>
+<script src="../js/iealert.js?v=2013.07.06.11.24.39"></script>
+<script>$("body").iealert({ support: "ie8" })</script>
+<![endif]-->
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="http://static.ak.facebook.com/connect/xd_arbiter.php?version=25#channel=f18984ddd4&amp;origin=http%3A%2F%2Fbin.dev&amp;channel_path=%2Ffr%2F%3Ffb_xd_fragment%23xd_sig%3Df28567e0d4%26"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="https://s-static.ak.facebook.com/connect/xd_arbiter.php?version=25#channel=f18984ddd4&amp;origin=http%3A%2F%2Fbin.dev&amp;channel_path=%2Ffr%2F%3Ffb_xd_fragment%23xd_sig%3Df28567e0d4%26"></iframe></div></div></div>
+</body>

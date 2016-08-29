@@ -1,0 +1,142 @@
+<head><!--<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Wir bieten Formalwear, inspiriert von der Welt des Segelns und des Meeres, mit dem ganz besonderen Stil. Entdecken Sie unsere Spi-Shirt-Kollektion, mit der originellen Knopfleiste und der Brusttasche in Form eines Vorsegels. Along with AUSPIBOR wind your dreams out of your mind">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auspibor.com</title>
+<link rel="sitemap" href="sitemap.xml">
+<link type="text/plain" rel="author" href="../humans.txt">
+<link rel="stylesheet" href="../css/styles.css?v=2013.07.06.11.24.39">
+<link rel="stylesheet" href="../css/leaflet.css?v=2013.07.06.11.24.39">
+<!--[if lte IE 8]><link rel="stylesheet" href="../css/leaflet-ie.css?v=2013.07.06.11.24.39" /><![endif]-->
+<link rel="stylesheet" href="../css/fresco/fresco.css?v=2013.07.06.11.24.39">
+<!--[if IE]><link rel="stylesheet" href="../css/ie.css?v=2013.07.06.11.24.39" /><![endif]-->
+<!--[if !(IE)]><!--><!--<![endif]-->
+<!--[if (lt IE 9)]><link rel="stylesheet" href="../css/iealert.css?v=2013.07.06.11.24.39" /><![endif]-->
+<style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+<body class="maian-font body-3d events-through" id="incr_specificity" data-bind="css: { 'events-through': isNotFullScreen }" data-twttr-rendered="true">
+<table id="loading" class="abs abs-vertical-stretch abs-horizontal-stretch before-loading z13 center w100p h100p">
+<tbody><tr>
+<td class="middle">
+<!--[if !(IE)]><!-->
+<div id="loading-container" class="loading">
+<b class="spinning" id="spinning-logo"></b>
+<b class="fadein" id="fading-logo"></b>
+</div>
+<!--<![endif]-->
+<h1 class="contrast">Laden...</h1>
+</td>
+</tr>
+</tbody></table>
+<div id="main_bg_nuages" class="fixed abs-vertical-stretch abs-horizontal-stretch main-bg-nuages h_main_nuage moves z0">&nbsp;</div>
+<div id="cloud_uber" class="fixed abs-horizontal-stretch h_nuage cloud-uber moves z3">&nbsp;</div>
+<div class="fixed line z4 w100p pvs mtl pt25 main_logo_container max-top-page min-top-page">
+<div class="unit size1of1">
+<div class="line ptl mbs center">
+<div class="unit size1of1">
+<img id="main_logo" src="../img/isologo_lueur.png?v=2013.07.06.11.24.39" class="isologo rel" width="578" height="129" alt="Laden...">
+</div>
+</div>
+</div>
+</div>
+<div id="static_map" class="fixed abs-vertical-stretch abs-horizontal-stretch z-2 bg-earth top_under_clouds"></div>
+<div id="map" class="fixed abs-vertical-stretch abs-horizontal-stretch z-2"></div>
+<div id="static_map_grid" class="fixed abs-vertical-stretch abs-horizontal-stretch z-1 the-grid top_under_clouds"></div>
+<div id="halo" class="fixed halo abs-vertical-stretch abs-horizontal-stretch z-1">
+<div class="halo h-page">&nbsp;</div>
+</div>
+<div id="main_menu" class="navbar navbar-fixed-top fixed menu events-through-auto escamoted">
+<div class="navbar-inner border-n">
+<div class="container min-width-menu">
+<a href="#!/start" class="brand pbn"><span class="auspibor-font navy-auspibor fs25">@</span><span class="auspibor-font navy-auspibor">AUSPIBOR</span></a>
+<div class="btn-group pull-right">
+<a data-bind="click: function(data,event) { document.location.hash = $root.modalPageHref('newsletter'); }" class="btn btn-info cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="&lt;div class='line'&gt;&lt;div class='unit size1of1'&gt;Abonnieren Sie unseren Newsletter&lt;/div&gt;&lt;/div&gt;"><i class="icon-bullhorn"></i></a>
+<a data-bind="click: function(data,event) { document.location.hash = $root.modalPageHref('legals'); }" class="btn btn-info btn-mini cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="Legale Erwähnungen"><i class="icon-legal"></i></a>
+<a data-bind="click:function(data,event){ $root.shareActivation(); $('#share').show('slow'); }" class="btn btn-info btn-mini cursor-pointer phm pvs trigger-tooltip" data-toggle="tooltip" data-placement="bottom" data-original-title="Teilen Sie diese Seite"><i class="icon-share-alt"></i></a>
+</div>
+<a data-bind="click: goToFr" data-toggle="tooltip" data-placement="bottom" data-original-title="Français" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-france-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToEn" data-toggle="tooltip" data-placement="bottom" data-original-title="English" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-uk-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToIt" data-toggle="tooltip" data-placement="bottom" data-original-title="Italiano" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-italy-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<a data-bind="click: goToEs" data-toggle="tooltip" data-placement="bottom" data-original-title="Español" class="trigger-tooltip brand phm pbn pull-right mrs cursor-pointer"><i class="icon-flags-spi-espagne-20 w20 h20" data-bind="click: function(data,event) { $($element).addClass('icon-spin'); }"></i></a>
+<div class="nav-collapse">
+<ul class="nav">
+<!-- ko foreach: $__page__.children -->
+<!-- ko if: !$data.val('modal') --><!-- /ko -->
+<!-- ko if: !$data.val('modal') --><!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/start">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-home"></i> Home</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/brand">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-certificate"></i> Unsere Marke</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/products">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-barcode"></i> Produkte</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- ko if: !$data.val('modal') -->
+<li data-bind="css: { active: $data.isVisible }" class="">
+<a class="navy-auspibor-important" data-bind="page-href: $data" href="#!/techno">
+<span class="middle" data-bind="html: $data.val('htitle')"><i class="icon-lightbulb"></i> Glossar</span>
+<span class="middle caret" data-bind="visible: $data.children().length &gt; 0" style=""></span>
+</a>
+</li>
+<!-- /ko -->
+<!-- /ko -->
+<li>
+<a class="navy-auspibor-important" href="#!/brand/legends/book1">
+<span class="middle badge badge-important pbs"><i class="icon-book"></i> Alte Buch</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ko foreach: $__page__.children -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- ko if: $data.isVisible() && ($data.children().length > 0) --><!-- /ko -->
+<!-- /ko -->
+</div>
+<div id="modal_newsletter" data-backdrop="true" data-bind="page: { id: 'newsletter', modal: true, fx: 'fade', afterShow: showBackdrop, beforeHide: hideBackdrop }" class="modal hide global-background events-through-auto" role="dialog" aria-hidden="true" style="display: block; ">
+<div class="stitch mas">
+<div class="modal-header stitch-separator-bottom">
+<a data-bind="page-href: '../'" class="close contrast" data-dismiss="modal" aria-hidden="true" href="#!/">×</a>
+<h4 class="contrast">Registrieren Sie bitte für unser Newsletter.</h4>
+</div>
+<div class="modal-body stitch-separator-bottom">
+<form id="mc-embedded-subscribe-form" action="http://auspibor.us5.list-manage.com/subscribe/post?u=26dbbd935aa335024b0052d85&amp;id=3c663073ba" method="post" name="mc-embedded-subscribe-form" novalidate="novalidate" class="form-inline pam global-background mbn">
+<input id="mce-EMAIL" type="email" value="" name="EMAIL" placeholder="Email" required="required" class="maian-font span4">
+<button id="mc-embedded-subscribe" type="submit" value="Inscription" name="subscribe" class="maian-font btn bold">Registrieren</button>
+</form>
+</div>
+<div class="line right pam">
+<div class="unit size1of1"><a data-bind="click: function(){ $root.resetSocialButtons(); return true; }, page-href: '../'" data-dismiss="modal" class="btn btn-primary bold" href="#!/">Schließen</a></div>
+</div>
+</div>
+</div>
+<div class="foot"></div>
+<!--[if lt IE 9]><script src="../js/css3mediaqueries.js?v=2013.07.06.11.24.39"></script><![endif]-->
+<!--[if (lt IE 9)]>
+<script src="../js/iealert.js?v=2013.07.06.11.24.39"></script>
+<script>$("body").iealert({ support: "ie8" })</script>
+<![endif]-->
+<div class="modal-backdrop hide" id="backdrop" style="display: block; "></div>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="http://static.ak.facebook.com/connect/xd_arbiter.php?version=25#channel=f35ad569a4&amp;origin=http%3A%2F%2Fbin.dev&amp;channel_path=%2Fde%2F%3Ffb_xd_fragment%23xd_sig%3Df17851be7%26"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="https://s-static.ak.facebook.com/connect/xd_arbiter.php?version=25#channel=f35ad569a4&amp;origin=http%3A%2F%2Fbin.dev&amp;channel_path=%2Fde%2F%3Ffb_xd_fragment%23xd_sig%3Df17851be7%26"></iframe></div></div></div>
+</body>
