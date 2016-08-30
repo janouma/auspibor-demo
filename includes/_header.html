@@ -1,0 +1,127 @@
+<!-- @include _timestamp -->
+
+<!DOCTYPE html>
+<!--[if lt IE 10]>
+<html class="ie9">
+<![endif]-->
+
+<!--[if !IE]> -->
+<html>
+<!-- <![endif]-->
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex" />
+
+  <script>
+      (function protect () {
+          'use strict'
+          var PASSWORD = 'boregor'
+          var PATTERN = /\bpassword\s*=\s*(.*?)(;|$)/
+          var MAX_ATTEMPT = 3
+          var PROMPT_TEXT = 'Enter password'
+          var FORBIDDEN_URL = '403.html'
+          var testResults
+          var autoPass
+          var params
+          var query = top.document.location.search.substring(1)
+          var parsedQuery
+          var input
+          var attempt = 0
+          var expirationDate
+          var paramTuple
+
+          console.debug(query)
+
+          if (query) {
+              parsedQuery = query.split('&').map(function (param){return param.split('=')})
+
+              for(paramTuple of parsedQuery){
+                  console.debug(paramTuple)
+                  if(paramTuple[0] === 'password'){
+                      console.debug("auto pass")
+                      autoPass = paramTuple[1]
+                      break
+                  }
+              }
+          }
+
+          if (!autoPass) {
+              testResults = PATTERN.exec(document.cookie)
+              autoPass = testResults && testResults[1]
+          }
+
+          if (autoPass !== PASSWORD) {
+              while (attempt++ < MAX_ATTEMPT) {
+                  if (input = prompt(PROMPT_TEXT, '')) {
+                      if (input === PASSWORD) {
+                          console.debug("password accepted")
+                          expirationDate = new Date()
+                          expirationDate.setTime(expirationDate.getTime() + 30 * 24 * 60 * 60 * 1000)
+                          document.cookie = `password=${input};path=/;expires=${expirationDate.toUTCString()}`
+                          return
+                      }
+                  } else {
+                      document.location.replace(FORBIDDEN_URL)
+                      return
+                  }
+              }
+              console.error("access denied")
+              document.location.replace(FORBIDDEN_URL)
+          }
+      })()
+  </script>
+
+  <!-- @stylesheet normalize qtip2.min style ie9 -->
+
+  <title>Auspibor legend</title>
+
+</head>
+
+<body data-music-mp3="<!-- @path factory-tale-remaster.mp3 -->?<!-- $timestamp -->"
+      data-music-ogg="<!-- @path factory-tale-remaster.ogg -->?<!-- $timestamp -->"
+      data-music-wma="<!-- @path factory-tale-remaster.wma -->?<!-- $timestamp -->">
+
+<!-- Book media api test
+<button onclick="bookMediaControler.musicOn();">Music On</button>
+<button onclick="bookMediaControler.musicOff();">Music Off</button>
+<button style="position:absolute;z-index:20000;" onclick="bookMediaControler.pause()">test pause</button>
+-->
+
+    <span id="image-loader">
+        <i data-src="<!-- @path bg-cloth.png -->?<!-- $timestamp -->"></i>
+        <i id="fabric-pattern" data-src="<!-- @path tissu50ptransp.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path cipher.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path old-paper.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path old-cover.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path old-inner-cover.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path snapshot-placeholder.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path play.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path pause.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path play-sd.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path pause-sd.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path video-border.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path reversed-video-border.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path animation-mark.gif -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path candle-off.png -->?<!-- $timestamp -->"></i>
+    </span>
+
+    <span id="css-hd-images">
+        <i data-src="<!-- @path hd_tissu50ptransp.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_bg-cloth.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_compass-shadow.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_cipher.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_old-paper.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_snapshot-1.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_snapshot-2.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_snapshot-3.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_snapshot-4.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_old-cover.png -->?<!-- $timestamp -->"></i>
+        <i data-src="<!-- @path hd_old-inner-cover.png -->?<!-- $timestamp -->"></i>
+    </span>
+
+    <span id="snapshot-loader">
+        <i data-src="<!-- @path snapshot.png -->?<!-- $timestamp -->"></i>
+    </span>

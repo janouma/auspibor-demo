@@ -1,0 +1,44 @@
+@import _common
+
+.ie9
+
+  #book-frame
+    background-image: url(hd_old-inner-cover.png), url(ld_old-inner-cover.png)
+    background-repeat: no-repeat, no-repeat
+    background-position: bottom, bottom
+    background-size: 0, 100%
+    border-radius: $radius
+    box-shadow: inset 0 0 6px 2px $auspibor-blue, 0 4px 10px $auspibor-blue
+
+  .flipbook
+    .page-wrapper
+      +perspective(none)
+
+      // /!\ DON'T PUT THESE ON SEVERAL LINES, BECAUSE THE USE OF VARIABLE $pages WON'T WORK PROPERLY
+
+      &[page="1"] > div, &[page="2"] > div, &[page="#{$pages - 1}"] > div, &[page="#{$pages}"] > div
+        overflow: inherit !important
+
+    .shadow,
+    &.shadow
+      box-shadow: none
+
+
+  &.sd
+    #book-frame
+      border-radius: ($radius * $sd-ratio)
+      box-shadow: inset 0 0 (6px * $sd-ratio) (2px * $sd-ratio) $auspibor-blue, 0 (4px * $sd-ratio) (10px * $sd-ratio) $auspibor-blue
+
+@import _ie9-hd
+
+// Screen config detection
+
+@media screen and (orientation: landscape) and (max-width: $small-screen-width), screen and (orientation: portrait) and (max-width: $small-screen-height)
+  .ie9
+    body:after
+      content: 'smallscreen'
+
+@media screen and (orientation: landscape) and (min-width: ($small-screen-width + 1)), screen and (orientation: portrait) and (min-width: ($small-screen-height + 1))
+  .ie9
+    body:after
+      content: 'widescreen'

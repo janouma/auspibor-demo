@@ -1,0 +1,256 @@
+<!-- @include _header -->
+
+<img id="zoom-out" src="<!-- @path zoom-out.png -->?<!-- $timestamp -->"/>
+
+<div id="volume-control">
+    <div class="icon"></div>
+</div>
+
+<div id="book-layer" class="loading" data-play-img="<!-- @path play.png -->?<!-- $timestamp -->" data-pause-img="<!-- @path pause.png -->?<!-- $timestamp -->" data-play-img-sd="<!-- @path play-sd.png -->?<!-- $timestamp -->" data-pause-img-sd="<!-- @path pause-sd.png -->?<!-- $timestamp -->" data-magnify-tooltip="<!-- $magnifyTooltip -->">
+    <div id="book-frame">
+        <div id="legend-book" class="flipbook">
+
+            <!-- @include _front-cover -->
+
+            <div class="page-content">
+                <div class="inner-content center middle">
+                    <h1><!-- $auspiborLegend --></h1>
+                    <h2><!-- $book --> I</h2>
+                </div>
+            </div>
+            <div id="preface" class="page-content">
+                <div class="inner-content justify middle">
+                    <a id="bookmark" href="#namedpagesummary"></a>
+                    <h2 class="center"><!-- $preface --></h2>
+                    <p class="first"><!-- $prefaceParagraph1 --></p>
+                    <p><a href="#appendix1"><!-- $seeAppendix --></a></p>
+                </div>
+            </div>
+
+
+            <div id="summary" class="page-content">
+                <div class="inner-content center">
+                    <h2><!-- $chapter --> I</h2>
+                    <ol class="summary">
+                        <li><a href="#video1"><!-- $videoTitle1 --></a></li>
+                        <li><a href="#video2"><!-- $videoTitle2 --></a></li>
+                        <li class="damaged"><!-- $videoTitle3 --></li>
+                        <li class="damaged"><!-- $videoTitle4 --></li>
+                        <li><a href="#video5"><!-- $videoTitle5 --></a></li>
+                        <li class="damaged"><!-- $videoTitle6 --></li>
+                        <li class="damaged"><!-- $videoTitle7 --></li>
+                        <li><a href="#video8"><!-- $videoTitle8 --></a></li>
+                        <li><a href="#video9"><!-- $videoTitle9 --></a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- video1: Guerre méditerranéenne -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="<!-- @path 01-greeks_ahead-pyro.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot animation-mark" src="<!-- @path hd_animation-mark.gif -->?<!-- $timestamp -->"/>
+                        <img class="snapshot border" src="<!-- @path hd_video-border.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot controls paused" data-video-id="57231185" data-colors="<!-- @path 01-greeks_ahead.png -->?<!-- $timestamp -->" src="<!-- @path snapshot-placeholder.png -->?<!-- $timestamp -->"/>
+                    </div>
+                    <p class="first"><!-- $legendParagraph1 --></p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Proin consequat commodo neque, nec sagittis ligula rutrum vel.</p>
+                </div>
+            </div>
+
+
+            <div class="page-content snapshothd1"></div>
+            <!-- video2: La flèche de Cupidon -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Torem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sem et tortor gravida elementum a scelerisque velit. Morbi sed tellus dolor, id placerat turpis. Vivamus felis metus, volutpat in placerat non, luctus et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="<!-- @path 02-austral_and_boreal-pyro.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot animation-mark" src="<!-- @path hd_animation-mark.gif -->?<!-- $timestamp -->"/>
+                        <img class="snapshot border" src="<!-- @path hd_video-border.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot controls paused" data-video-id="62466955" data-colors="<!-- @path 02-austral_and_boreal.png -->?<!-- $timestamp -->" src="<!-- @path snapshot-placeholder.png -->?<!-- $timestamp -->"/>
+                    </div>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum.</p>
+                </div>
+            </div>
+
+
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first"><!-- $legendParagraph2 --></p>
+                    <p><!-- $legendParagraph3 --></p>
+                    <p><!-- $legendParagraph4 --></p>
+                    <p><!-- $legendParagraph5 --></p>
+                    <p class="damaged">Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti.</p>
+                </div>
+            </div>
+            <div class="page-content snapshothd2"></div>
+
+            <div class="page-content snapshothd2"></div>
+            <div class="page-content">
+                <div class="inner-content justify damaged">
+                    <p>Torem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sem et tortor gravida elementum a scelerisque velit. Morbi sed tellus dolor, id placerat turpis. Vivamus felis metus, volutpat in placerat non, luctus et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet nunc non quam elementum fermentum. Nulla consectetur laoreet urna nec rhoncus. Vivamus varius hendrerit cursus.</p>
+                    <p>Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <!-- video3: Le procès des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <img class="snapshot" src="<!-- @path damaged-picture.png -->?<!-- $timestamp -->"/>
+                    <p class="first"><!-- $legendParagraph6 --></p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Proin consequat commodo neque, nec sagittis ligula rutrum vel.</p>
+                </div>
+            </div>
+            <!-- video4: à la poursuite des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <img class="snapshot" src="<!-- @path damaged-picture.png -->?<!-- $timestamp -->"/>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first"><!-- $legendParagraph7 --></p>
+                    <p><!-- $legendParagraph8 --></p>
+                    <p class="damaged">Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+            <!-- video5: Le point Auspibor -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="first"><!-- $legendParagraph9 --></p>
+                    <p><!-- $legendParagraph10 --></p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="<!-- @path 11-auspibor_shelter-pyro.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot animation-mark" src="<!-- @path hd_animation-mark.gif -->?<!-- $timestamp -->"/>
+                        <img class="snapshot border" src="<!-- @path hd_video-border.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot controls paused" data-video-id="69620056" data-colors="<!-- @path 11-auspibor_shelter.png -->?<!-- $timestamp -->" src="<!-- @path snapshot-placeholder.png -->?<!-- $timestamp -->"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page-content snapshothd4"></div>
+            <div class="page-content">
+                <div class="inner-content justify damaged">
+                    <p>Torem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sem et tortor gravida elementum a scelerisque velit. Morbi sed tellus dolor, id placerat turpis. Vivamus felis metus, volutpat in placerat non, luctus et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet nunc non quam elementum fermentum. Nulla consectetur laoreet urna nec rhoncus. Vivamus varius hendrerit cursus.</p>
+                    <p>Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <!-- video6: Le traité de paix -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <img class="snapshot" src="<!-- @path damaged-picture.png -->?<!-- $timestamp -->"/>
+                    <p class="first"><!-- $legendParagraph11 --></p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first"><!-- $legendParagraph12 --></p>
+                    <p><!-- $legendParagraph13 --></p>
+                    <p class="damaged">Nam quis enim ante. In ultrices erat a erat tempus sodales. Duis in imperdiet ligula. Suspendisse semper mattis augue, vitae suscipit lectus ullamcorper viverra. Vivamus malesuada sem non enim porta sollicitudin. Phasellus nec erat et metus dignissim fringilla ut vel risus. Donec ut lorem ut arcu sagittis iaculis. Vivamus hendrerit nulla eu erat luctus ut lobortis orci fringilla. Curabitur et enim est, aliquet aliquam libero. Suspendisse potenti. Suspendisse potenti. Duis consequat blandit ante, eu dignissim justo egestas vel. Sed imperdiet justo sed felis vestibulum accumsan. Praesent ut libero sit amet lacus dignissim ultricies ut at diam. Mauris non dui vitae tortor porttitor lacinia.</p>
+                </div>
+            </div>
+
+
+            <!-- video7: Le retour des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Mauris non dui vitae tortor porttitor lacinia.</p>
+                    <img class="snapshot" src="<!-- @path damaged-picture.png -->?<!-- $timestamp -->"/>
+                </div>
+            </div>
+            <div class="page-content snapshothd3"></div>
+
+
+            <!-- video8: La légende d'Austral et Boréal -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="<!-- @path 16-winds_legend-pyro.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot animation-mark" src="<!-- @path hd_animation-mark.gif -->?<!-- $timestamp -->"/>
+                        <img class="snapshot border" src="<!-- @path hd_reversed-video-border.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot controls paused" data-video-id="61647184" data-colors="<!-- @path 16-winds_legend.png -->?<!-- $timestamp -->" src="<!-- @path snapshot-placeholder.png -->?<!-- $timestamp -->"/>
+                    </div>
+                    <p class="first"><!-- $legendParagraph14 --></p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Sed imperdiet justo sed felis vestibulum accumsan.</p>
+                </div>
+            </div>
+            <!-- video9: L'héritage des vents -->
+            <div class="page-content video-page">
+                <div class="inner-content justify">
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui.</p>
+                    <p class="damaged">Mauris in lectus dui. Ut facilisis turpis nec mauris porta in sodales lorem elementum. Aliquam ultrices eros vitae est gravida gravida a id dui. Mauris non dui vitae tortor porttitor lacinia.</p>
+                    <div class="snapshot-frame animated">
+                        <img class="snapshot pyro" src="<!-- @path 17-winds_legacy-pyro.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot animation-mark" src="<!-- @path hd_animation-mark.gif -->?<!-- $timestamp -->"/>
+                        <img class="snapshot border" src="<!-- @path hd_video-border.png -->?<!-- $timestamp -->"/>
+                        <img class="snapshot controls paused" data-video-id="73773930" data-colors="<!-- @path 17-winds_legacy.png -->?<!-- $timestamp -->" src="<!-- @path snapshot-placeholder.png -->?<!-- $timestamp -->"/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page-content">
+                <div class="inner-content justify">
+                    <p class="first"><!-- $legendParagraph15 --></p>
+                    <p><!-- $legendParagraph16 --></p>
+                    <p><!-- $legendParagraph17 --></p>
+                </div>
+            </div>
+            <div class="page-content appendix-page">
+                <div class="inner-content justify">
+                    <h2 class="center"><!-- $genesis --></h2>
+                    <p class="first"><!-- $genesisParagraph1 --></p>
+                    <p><!-- $genesisParagraph2 --></p>
+                    <p><!-- $genesisParagraph3 --></p>
+                    <p><a href="javascript:void(0)" data-link="products"><!-- $genesisParagraph4 --></a></p>
+                    <p><!-- $genesisParagraph5 --></p>
+                    <p><!-- $genesisParagraph6 --></p>
+                    <p class="center"><a href="#namedpagesummary"><!-- $backToSummary --></a></p>
+                </div>
+            </div>
+
+            <!-- @include _back-cover -->
+
+        </div>
+    </div>
+</div>
+
+<div id="decoration-frame">
+    <div id="decoration">
+        <div class="candle" id="candle1">
+            <img class="shadow" src="<!-- @path candle-shadow.png -->?<!-- $timestamp -->"/>
+            <img class="light" src="<!-- @path candle-cinemagraph.gif -->?<!-- $timestamp -->"/>
+        </div>
+        <div class="candle" id="candle2">
+            <img class="shadow" src="<!-- @path candle-shadow.png -->?<!-- $timestamp -->"/>
+            <img class="light" src="<!-- @path candle-cinemagraph.gif -->?<!-- $timestamp -->"/>
+        </div>
+        <div class="candle" id="candle3">
+            <img class="shadow" src="<!-- @path candle-shadow.png -->?<!-- $timestamp -->"/>
+            <img class="light" src="<!-- @path candle-cinemagraph.gif -->?<!-- $timestamp -->"/>
+        </div>
+        <div class="candle" id="candle4">
+            <img class="shadow" src="<!-- @path candle-shadow.png -->?<!-- $timestamp -->"/>
+            <img class="light" src="<!-- @path candle-cinemagraph.gif -->?<!-- $timestamp -->"/>
+        </div>
+        <img id="compass" src="<!-- @path compass-cinemagraph.gif -->?<!-- $timestamp -->"/>
+        <div class="candle" id="candle5">
+            <img class="shadow" src="<!-- @path candle-shadow.png -->?<!-- $timestamp -->"/>
+            <img class="light" src="<!-- @path candle-cinemagraph.gif -->?<!-- $timestamp -->"/>
+        </div>
+    </div>
+</div>
+  
+<!-- @include _footer -->

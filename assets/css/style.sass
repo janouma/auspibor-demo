@@ -1,0 +1,661 @@
+/* Write your CSS! */
+
+@import _common
+
+$paper-color: #ffffd5
+$book-width: 1080px
+$book-height: 650px
+$snapshot-width: 440px
+$cover-side-width: 5px
+$cover-color: #4f2c27
+$link-color: darken(#93a1fa, 53%)
+$font-size: 16px
+
+
++font-face("maian", "maian")
++font-face("cambria", "cambria")
++font-face("auspibor", "auspibor")
++font-face("zallman", "zallman")
+
+
+html
+  height: 100%
+
+body
+  height: 100%
+  background-color: #aaa
+  overflow-x: hidden
+  background-image: url(hd_tissu50ptransp.png), url(hd_bg-cloth.png),  url(ld_tissu50ptransp.png), url(ld_bg-cloth.png)
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
+  background-size: 0, 0, 0, 0
+
+  &.cloth
+    background-repeat: no-repeat, no-repeat, repeat, no-repeat
+    background-size: 0,0, auto, 0
+
+  &.bg
+    background-repeat: no-repeat, no-repeat, repeat, no-repeat
+    background-size: 0,0, auto, 100% 120%
+
+  &:before
+    content: " "
+    display: block
+    height: 13%
+
+.middle
+  padding-top: 40%
+
+.perfect-middle
+  padding-top: 50%
+
+.center
+  text-align: center
+
+.justify
+  text-align: justify
+  $hyphens: auto
+  -webkit-hyphens: $hyphens
+  -moz-hyphens: $hyphens
+  -ms-hyphens: $hyphens
+  -o-hyphens: $hyphens
+  hyphens: $hyphens
+
+.summary
+  list-style-type: hiragana-iroha
+  text-align: left
+  margin: 40px 0 0 20px
+
+  li
+    margin-top: 9px
+
+    a
+      text-decoration: none
+      color: black
+      +transition(all 0.5s)
+
+      &:visited
+        color: black
+
+      &:hover,
+      &:active
+        color: darken($link-color, 10%)
+
+    &:first-letter
+      text-transform: uppercase
+
+    &:not(.damaged)
+      +transition(all 0.5s)
+      +transform-origin(center left)
+
+      &:hover
+        +transform(scale(1.1))
+        font-weight: bold
+        color: darken($link-color, 10%)
+
+    &.damaged
+      width: 80%
+
+      &:nth-child(2n+1)
+        background-position: 0 20px
+        width: 60%
+
+      &:nth-child(3n+1)
+        background-position: 0 38px
+        width: 70%
+
+#image-loader,
+#snapshot-loader
+  position: absolute
+  top: 0
+  left: 0
+  visibility: hidden
+
+.loading
+  background: url(loading.gif) no-repeat
+  background-position: 48% 45%
+
+#decoration-frame
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  z-index: -1
+
+#volume-control
+  $volume-width: 100px
+
+  position: absolute
+  top: 22px
+  left: 38%
+  width: $volume-width
+  height: 78px
+  background: url(seashell-sprites.png) no-repeat
+  background-size: ($volume-width * 2) auto
+  +transition(top 0.2s linear)
+
+  .icon
+    $icon-width: 25px
+
+    position: absolute
+    bottom: 18px
+    right: 15px
+    width: $icon-width
+    height: 22px
+    background: url(volume-sprites.png) no-repeat
+    background-size: ($icon-width * 3) auto
+    background-position: (-$icon-width * 2) 0
+    cursor: not-allowed
+
+    &.on,
+    &.off
+      cursor: pointer
+
+    &.off
+      background-position: 0 0
+
+    &.on
+      background-position: (-$icon-width) 0
+
+  &:hover
+    background-position: (-$volume-width) 0
+
+#decoration
+  position: relative
+  margin: 0 auto
+  width: 1430px
+
+.candle
+  $x: -5px
+  $y: -5px
+  width: 140px
+  height: 145px
+  background-position: $x $y, $x $y
+  position: absolute
+  background-image: url(hd_candle-off.png), url(ld_candle-off.png)
+  background-repeat: no-repeat, no-repeat
+  background-size: 0, 150px auto
+
+  img
+    position: absolute
+    opacity: 0
+    visibility: hidden
+    +transition(opacity 0.5s ease-in)
+
+  img.shadow
+    top: -97px
+    left: -95px
+    width: 334px
+
+  img.light
+    top: $y
+    left: $x
+    width: 150px
+    height: 154px
+
+#candle1
+  right: 3%
+  top: 10px
+
+#candle2
+  right: -3%
+  top: 300px
+  //scale(0.75) rotateZ(15deg)
+  +transform(matrix(0.7244443697, 0.1941142838, -0.1941142838, 0.7244443697, 0, 1))
+
+#candle3
+  left: 55%
+  top: -60px
+  //scale(0.5) rotateZ(-15deg)
+  +transform(matrix(0.4829629131, -0.1294095225, 0.1294095225, 0.4829629131, 0, 1))
+  +transition(top 0.2s linear)
+
+#candle4
+  left: -5%
+  top: 600px
+  //scale(1.25) rotateZ(-30deg)
+  +transform(matrix(1.0825317547, -0.625, 0.625, 1.0825317547, 0, 1))
+  +transition(left 0.2s linear)
+
+#candle5
+  left: 10%
+  top: -15px
+  //scale(0.7)
+  +transform(matrix(0.7, 0, 0, 0.7, 0, 1))
+  +transition(top 0.2s linear)
+
+#compass
+  position: absolute
+  top: 100px
+  left: -60px
+  background-image: url(hd_compass-shadow.png), url(ld_compass-shadow.png)
+  background-repeat: no-repeat
+  background-size: 0, 100% auto
+  visibility: hidden
+  opacity: 0
+  width: 200px
+  height: 220px
+  +transition(opacity 0.5s ease-in)
+
+
+#bookmark
+  position: absolute
+  top: 0
+  right: 10px
+  background-color: red
+  +background-image(linear-gradient(lighten(red, 25%), red 2px, darken(red, 25%) 30%))
+  width: 18px
+  height: 120px
+  border-radius: 0 0 0 75px
+  border: 1px solid darken(red, 40%)
+  +transition(all 0.2s)
+
+  &.up
+    //translateY(-45px)
+    +transform(matrix(1, 0, 0, 1, 0, -45))
+
+#book-layer
+  position: relative
+  //rotateZ(-3deg)
+  +transform(matrix(0.998629534754574, -0.052335956242944, 0.052335956242944, 0.998629534754574, 0, 1))
+
+  &.loading
+    //rotateZ(0)
+    +transform(matrix(1, 0, 0, 1, 0, 1))
+
+#book-frame
+  width: $book-width
+  margin: 0 auto
+  //scale(3.5)
+  +transform(matrix(3.5, 0, 0, 3.5, 0, 1))
+  visibility: hidden
+
+  &.zoom-out
+    visibility: visible
+    //scale(1)
+    +transform(matrix(1, 0, 0, 1, 0, 1))
+    +transition(all 1.0s ease-in)
+
+.snapshot-frame
+  position: relative
+
+  &.animated
+    &:hover
+      .pyro
+        opacity: .5
+
+      .controls
+        opacity: 1
+
+.video,
+.snapshot
+  margin-top: 10px
+
+.video
+  position: absolute
+  top: 0
+  left: 0
+  background-color: rgba(black, .75)
+  +transition(opacity .5s ease-in)
+
+  &.fullscreen
+    width: 100%
+    height: 100%
+    margin: 0
+
+#zoom-out
+  position: fixed
+  top: 85px
+  left: 72px
+  visibility: hidden
+  opacity: 0
+  z-index: 10000
+  cursor: pointer
+  +transition(opacity .5s ease-in)
+
+.snapshot
+  width: $snapshot-width
+
+  &.pyro,
+  &.controls
+    +transition(opacity .5s ease-in)
+
+  &.controls
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    background-size: 100%
+
+  &.border
+    position: absolute
+    top: -10px
+    left: -10px
+    width: 460px
+    pointer-events: none
+    background: transparent no-repeat
+    background-size: 100%
+
+  &.animation-mark
+    position: absolute
+    top: 0
+    left: 0
+    background: transparent url(ld_animation-mark.gif) no-repeat
+    background-size: 100%
+
+.even
+  .snapshot.border
+    background-image: url(ld_video-border.png)
+
+.odd
+  .snapshot.border
+    background-image: url(ld_reversed-video-border.png)
+
+
+.flipbook
+  width: $book-width
+  height: $book-height
+  font-family: "maian"
+
+  h1,h2,h3,h4,h5,h6
+    font-family: "cambria"
+
+    &:first-letter
+      text-transform: uppercase
+
+  a
+    text-decoration: none
+    color: $link-color
+
+    &:visited,
+    &:hover,
+    &:active
+      color: darken($link-color, 10%)
+
+  p.damaged,
+  li.damaged
+    font-family: "helvetica"
+    background-image: url(hd_cipher.png), url(ld_cipher.png)
+    background-size: 0, 443px auto
+    color: rgba($paper-color, 0)
+    font-size: 12.5pt
+
+  .damaged
+    h2,h3,h4,h5,h6,p
+      @extend p.damaged
+
+  h1
+    font-size: 35pt
+    line-height: 50pt
+
+    .auspibor
+      strong
+        font-size: 45pt
+
+      .huge
+        font-size: 175pt
+
+    a.auspibor
+      &,
+      &:hover,
+      &:visited,
+      &:active
+        color: inherit
+
+  .auspibor
+    font-family: "auspibor"
+
+    strong
+      font-size: 15pt
+
+  .page-wrapper
+    +perspective(2000px)
+
+    // /!\ DON'T PUT THESE ON SEVERAL LINES, BECAUSE THE USE OF VARIABLE $pages WON'T WORK PROPERLY
+
+    &[page="1"] > div, &[page="2"] > div, &[page="#{$pages - 1}"] > div, &[page="#{$pages}"] > div
+      overflow: visible !important
+
+    &[page].overflow
+      &, & > div
+        overflow: visible !important
+
+  .page-content.even
+    background-position: top left, top left
+
+  .page-content.odd
+    background-position: top right, top right
+
+  &, div
+    border-radius: $radius
+
+  .page-content
+    background-image: url(hd_old-paper.png), url(ld_old-paper.png)
+    background-size: 0, 200% 100%
+    background-repeat: no-repeat, no-repeat
+    border-radius: 0
+
+    &.snapshothd1,
+    &.snapshothd2,
+    &.snapshothd3,
+    &.snapshothd4
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat
+      background-size: 0, 0, 200% 100%, 200% 100%
+
+    &.snapshothd1
+      background-image: url(hd_snapshot-1.png), url(hd_old-paper.png),  url(ld_snapshot.png), url(ld_old-paper.png)
+
+    &.snapshothd2
+      background-image: url(hd_snapshot-2.png), url(hd_old-paper.png),  url(ld_snapshot.png), url(ld_old-paper.png)
+
+    &.snapshothd3
+      background-image: url(hd_snapshot-3.png), url(hd_old-paper.png),  url(ld_snapshot.png), url(ld_old-paper.png)
+
+    &.snapshothd4
+      background-image: url(hd_snapshot-4.png), url(hd_old-paper.png),  url(ld_snapshot.png), url(ld_old-paper.png)
+
+  .inner-content
+    font-size: $font-size
+    padding: 85px 40px 0 40px
+
+    &.middle
+      @extend .middle
+
+    &.perfect-middle
+      @extend .perfect-middle
+
+    p.first:first-letter
+      font-family: "zallman"
+      font-size: 40pt
+      text-transform: uppercase
+      float: left
+      margin: -15px 5px -10px 0
+
+
+  .hard
+    background-size: 0, 200% 100%
+    background-repeat: no-repeat, no-repeat
+    box-shadow: inset 0 0 6px 2px $auspibor-blue
+    color: darken($cover-color, 9%)
+    text-shadow: 0 1px 1px rgba($paper-color, .75), 0 -1px 1px black
+
+    h1,h2,h3,h4,h5,h6
+      opacity: 0.5
+
+  .outer-cover
+    background-image: url(hd_old-cover.png), url(ld_old-cover.png)
+
+  .inner-cover
+    background-image: url(hd_old-inner-cover.png), url(ld_old-inner-cover.png)
+
+  .outer-cover.front,
+  .inner-cover.back
+    background-position: right
+
+  .own-size
+    width: ($book-width/2 - 20)
+    height: ($book-height - 20)
+
+  .shadow,
+  &.shadow
+    box-shadow: 0 4px 10px $auspibor-blue
+
+  .inner-cover
+    & .side
+      width: $cover-side-width
+      height: ($book-height - 2)
+      position: absolute
+      top: 1px
+      +background-image(linear-gradient(left, darken($cover-color, 5%), lighten($cover-color, 15%), lighten($cover-color, 5%)))
+      background-color: lighten($cover-color, 5%)
+      border-radius: $radius 0 0 $radius
+      +transform(rotateY(90deg))
+      +transform-origin(top right)
+      z-index: 100000
+
+    &.front .side
+      left: -2px
+
+    &.back .side
+      left: ($book-width/2 - $radius)
+
+  &.open
+    .inner-cover
+      &.front
+        border-radius: $radius 0 0 $radius
+
+      &.back
+        border-radius: 0 $radius $radius 0
+
+
+@media screen and (max-width: ($book-width+160))
+  #candle4
+    left: -7%
+
+@media screen and (max-width: ($book-width+120))
+  #candle4
+    left: -11%
+
+@media screen and (max-height: $book-height)
+  #volume-control
+    top: -20px
+
+  #candle3
+    top: -80px
+
+  #candle5
+    top: -65px
+
+// qtip2 customize
+
+@import _qtip2-customize
+
+// Smallscreen resolution style (sd)
+
+.sd
+
+  p.damaged,
+  li.damaged
+    font-size: (12.5pt * $sd-ratio)
+
+  #decoration
+    width: (1500px * $sd-ratio)
+
+  #volume-control
+    left: (38% * $sd-ratio)
+
+  #book-frame
+    width: ($book-width * $sd-ratio)
+
+  #bookmark
+    right: (10px * $sd-ratio)
+    width: (18px * $sd-ratio)
+    height: (120px * $sd-ratio)
+    border-radius: 0 0 0 (75px * $sd-ratio)
+    border: (1px * $sd-ratio) solid darken(red, 40%)
+
+    &.up
+      +transform(matrix(1, 0, 0, 1, 0, (-45 * $sd-ratio)))
+
+  .video,
+  .snapshot
+    margin-top: (10px * $sd-ratio)
+
+  .snapshot
+    width: ($snapshot-width * $sd-ratio)
+
+    &.border
+      top: (-10px * $sd-ratio)
+      left: (-10px * $sd-ratio)
+      width: (460px * $sd-ratio)
+
+  .flipbook
+    width: ($book-width * $sd-ratio)
+    height: ($book-height * $sd-ratio)
+
+    h1
+      font-size: (35pt * $sd-ratio)
+      line-height: (50pt * $sd-ratio)
+
+      .auspibor
+        strong
+          font-size: (45pt * $sd-ratio)
+
+        .huge
+          font-size: (175pt * $sd-ratio)
+
+      strong
+        font-size: (15pt * $sd-ratio)
+
+    .own-size
+      width: (($book-width/2 - 20) * $sd-ratio)
+      height: (($book-height - 20) * $sd-ratio)
+
+    .inner-cover
+      & .side
+        width: ($cover-side-width * $sd-ratio)
+        height: (($book-height - 2) * $sd-ratio)
+        position: absolute
+        top: (1px * $sd-ratio)
+        border-radius: ($radius * $sd-ratio) 0 0 ($radius * $sd-ratio)
+
+      &.front .side
+        left: (-2px * $sd-ratio)
+
+      &.back .side
+        left: (($book-width/2 - $radius) * $sd-ratio)
+
+    .inner-content
+      font-size: ($font-size * $sd-ratio)
+      padding: (85px * $sd-ratio) (40px * $sd-ratio) 0 (40px * $sd-ratio)
+
+      &.middle
+        padding-top: 40%
+        //@extend .middle
+
+      &.perfect-middle
+        padding-top: 50%
+        //@extend .perfect-middle
+
+      p.first:first-letter
+        font-size: (40pt * $sd-ratio)
+        margin: (-15px * $sd-ratio) (5px * $sd-ratio) (-10px * $sd-ratio) 0
+
+    .shadow,
+    &.shadow
+      box-shadow: 0 (4px * $sd-ratio) (10px * $sd-ratio) $auspibor-blue
+
+
+@import style-hd
+
+// Screen config detection
+
+body:after
+  display: none
+
+@media screen and (orientation: landscape) and (max-device-width: $small-screen-width), screen and (orientation: portrait) and (max-device-width: $small-screen-height)
+  body:after
+    content: 'smallscreen'
+
+@media screen and (orientation: landscape) and (min-device-width: ($small-screen-width + 1)), screen and (orientation: portrait) and (min-device-width: ($small-screen-height +1))
+  body:after
+    content: 'widescreen'
