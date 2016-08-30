@@ -12,21 +12,20 @@
   var input
   var attempt = 0
   var expirationDate
-  var paramTuple
 
   console.debug(query)
 
   if (query) {
-    parsedQuery = query.split('&').map(function (param) {return param.split('=')})
+    parsedQuery = query.split('&').map(function (param) { return param.split('=') })
 
-    for (paramTuple of parsedQuery) {
+    parsedQuery.some(function (paramTuple) {
       console.debug(paramTuple)
       if (paramTuple[0] === 'password') {
         console.debug('auto pass')
         autoPass = paramTuple[1]
-        break
+        return true
       }
-    }
+    })
   }
 
   if (!autoPass) {
@@ -41,7 +40,7 @@
           console.debug('password accepted')
           expirationDate = new Date()
           expirationDate.setTime(expirationDate.getTime() + 30 * 24 * 60 * 60 * 1000)
-          document.cookie = `password=${input};path=/;expires=${expirationDate.toUTCString()}`
+          document.cookie = 'password=' + input + ';path=/;expires=' + expirationDate.toUTCString()
           return
         }
       } else {
