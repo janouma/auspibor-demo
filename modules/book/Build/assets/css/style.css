@@ -117,7 +117,7 @@ body {
   left: 0;
   top: 0;
   width: 100%;
-  z-index: -1; }
+  z-index: 0; }
 
 #volume-control {
   position: absolute;
@@ -270,7 +270,8 @@ body {
   -moz-transform: matrix(0.99863, -0.05234, 0.05234, 0.99863, 0, 1);
   -ms-transform: matrix(0.99863, -0.05234, 0.05234, 0.99863, 0, 1);
   -o-transform: matrix(0.99863, -0.05234, 0.05234, 0.99863, 0, 1);
-  transform: matrix(0.99863, -0.05234, 0.05234, 0.99863, 0, 1); }
+  transform: matrix(0.99863, -0.05234, 0.05234, 0.99863, 0, 1);
+  z-index: 1; }
   #book-layer.loading {
     -webkit-transform: matrix(1, 0, 0, 1, 0, 1);
     -moz-transform: matrix(1, 0, 0, 1, 0, 1);
@@ -581,7 +582,7 @@ html.hd body {
   background-color: #465073; }
   html.hd body.bg {
     background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-    background-size: auto, 100% 120%, 0, 0; }
+    background-size: auto, cover, 0, 0; }
 html.hd .candle {
   background-size: 150px auto, 0; }
 html.hd #compass {

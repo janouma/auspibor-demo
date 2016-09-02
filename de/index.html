@@ -13,64 +13,7 @@
 <meta name="fragment" content="!">
 <meta name="description" content="Wir bieten Formalwear, inspiriert von der Welt des Segelns und des Meeres, mit dem ganz besonderen Stil. Entdecken Sie unsere Spi-Shirt-Kollektion, mit der originellen Knopfleiste und der Brusttasche in Form eines Vorsegels. Along with AUSPIBOR wind your dreams out of your mind" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<script>
-      (function protect () {
-          'use strict'
-          var PASSWORD = 'boregor'
-          var PATTERN = /\bpassword\s*=\s*(.*?)(;|$)/
-          var MAX_ATTEMPT = 3
-          var PROMPT_TEXT = 'Enter password'
-          var FORBIDDEN_URL = '/403.html'
-          var testResults
-          var autoPass
-          var params
-          var query = top.document.location.search.substring(1)
-          var parsedQuery
-          var input
-          var attempt = 0
-          var expirationDate
-          var paramTuple
-
-          console.debug(query)
-
-          if (query) {
-              parsedQuery = query.split('&').map(function (param){return param.split('=')})
-
-              for(paramTuple of parsedQuery){
-                  console.debug(paramTuple)
-                  if(paramTuple[0] === 'password'){
-                      console.debug("auto pass")
-                      autoPass = paramTuple[1]
-                      break
-                  }
-              }
-          }
-
-          if (!autoPass) {
-              testResults = PATTERN.exec(document.cookie)
-              autoPass = testResults && testResults[1]
-          }
-
-          if (autoPass !== PASSWORD) {
-              while (attempt++ < MAX_ATTEMPT) {
-                  if (input = prompt(PROMPT_TEXT, '')) {
-                      if (input === PASSWORD) {
-                          console.debug("password accepted")
-                          expirationDate = new Date()
-                          expirationDate.setTime(expirationDate.getTime() + 30 * 24 * 60 * 60 * 1000)
-                          document.cookie = `password=${input};path=/;expires=${expirationDate.toUTCString()}`
-                          return
-                      }
-                  } else {
-                      document.location.replace(FORBIDDEN_URL)
-                      return
-                  }
-              }
-              console.error("access denied")
-              document.location.replace(FORBIDDEN_URL)
-          }
-      })()
-  </script>
+<script src="/modules/book/Build/assets/js/protect.js"></script>
 <title>Auspibor.com</title>
 <link rel="sitemap" href="sitemap.xml" />
 <link type="text/plain" rel="author" href="../humans.txt" />
@@ -835,7 +778,7 @@ Auster der Südwind
 </div>
 </div>
 </div>
-<div id="grimoire_page" class="events-through-all" data-bind="page: { alt_id:'no', id:'book1', role: 'start', title: 'Alte Buch', htitle:'Alte Buch', frame: 'iframe', sourceOnShow: '/modules/book/Build/book-de.html?v=2016.08.29.14.37.00' , showElement: fadeIn, hideElement: fadeOut}">
+<div id="grimoire_page" class="events-through-all" data-bind="page: { alt_id:'no', id:'book1', role: 'start', title: 'Alte Buch', htitle:'Alte Buch', frame: 'iframe', sourceOnShow: '/modules/book/Build/book-de.html?v=2016.09.02.21.50.00' , showElement: fadeIn, hideElement: fadeOut}">
 <iframe id="bookiframe" width="100%" frameborder="0" class="abs abs-top abs-bottom abs-right abs-left z10 h100p man pan"></iframe>
 </div>
 </div>
