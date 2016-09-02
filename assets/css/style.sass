@@ -17,7 +17,6 @@ $font-size: 16px
 +font-face("auspibor", "auspibor")
 +font-face("zallman", "zallman")
 
-
 html
   height: 100%
 
@@ -119,7 +118,7 @@ body
   left: 0
   top: 0
   width: 100%
-  z-index: -1
+  z-index: 0
 
 #volume-control
   $volume-width: 100px
@@ -257,6 +256,7 @@ body
   position: relative
   //rotateZ(-3deg)
   +transform(matrix(0.998629534754574, -0.052335956242944, 0.052335956242944, 0.998629534754574, 0, 1))
+  z-index: 1
 
   &.loading
     //rotateZ(0)
