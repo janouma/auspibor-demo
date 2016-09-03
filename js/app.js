@@ -735,27 +735,27 @@ function AppViewModel() {
     };
     self.goToFr = function (data, event) {
         var hash = document.location.hash;
-        document.location = NS.CONST.ABS_REAL_PATH + "fr/" + hash;
+        document.location = NS.CONST.ABS_REAL_PATH + "fr/" + document.location.search + hash;
     };
     self.goToEn = function (data, event) {
         var hash = document.location.hash;
-        document.location = NS.CONST.ABS_REAL_PATH + "en/" + hash;
+        document.location = NS.CONST.ABS_REAL_PATH + "en/" + document.location.search + hash;
     };
     self.goToIt = function (data, event) {
         var hash = document.location.hash;
-        document.location = NS.CONST.ABS_REAL_PATH + "it/" + hash;
+        document.location = NS.CONST.ABS_REAL_PATH + "it/" + document.location.search + hash;
     };
     self.goToEs = function (data, event) {
         var hash = document.location.hash;
-        document.location = NS.CONST.ABS_REAL_PATH + "es/" + hash;
+        document.location = NS.CONST.ABS_REAL_PATH + "es/" + document.location.search + hash;
     };
     self.goToPt = function (data, event) {
         var hash = document.location.hash;
-        document.location = NS.CONST.ABS_REAL_PATH + "pt/" + hash;
+        document.location = NS.CONST.ABS_REAL_PATH + "pt/" + document.location.search + hash;
     };
     self.goToDe = function (data, event) {
         var hash = document.location.hash;
-        document.location = NS.CONST.ABS_REAL_PATH + "de/" + hash;
+        document.location = NS.CONST.ABS_REAL_PATH + "de/" + document.location.search + hash;
     };
     Seadragon.Config.imagePath = NS.CONST.ABS_REAL_PATH + "img/ui/";
     self.imgBasePath = ko.observable(NS.CONST.ABS_REAL_PATH + "img");

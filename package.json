@@ -1,0 +1,27 @@
+{
+  "name": "auspibor-demo",
+  "version": "1.0.0",
+  "description": "Auspibor web site demo",
+  "config": {
+    "port": 8181
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janouma/auspibor-demo.git"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "janouma",
+  "bugs": {
+    "url": "https://github.com/janouma/auspibor-demo/issues"
+  },
+  "homepage": "https://github.com/janouma/auspibor-demo#readme",
+  "devDependencies": {
+    "hapi": "^15.0.3",
+    "inert": "^4.0.2"
+  }
+}
